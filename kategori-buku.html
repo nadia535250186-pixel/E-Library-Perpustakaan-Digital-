@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kategori buku LAFENADHER E-Library.">
+    <title>Kategori Buku | LAFENADHER E-Library</title>
+    <link rel="stylesheet" href="css/style-buku.css">
+</head>
+<body data-page="category">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="katalog-buku.html" aria-label="LAFENADHER E-Library">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span>
+                    <strong>LAFENADHER</strong>
+                    <small>E-Library</small>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a href="katalog-buku.html">Katalog</a>
+                <a class="active" href="kategori-buku.html">Kategori</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow eyebrow-dark">EXPLORE</span>
+                <h1>Kategori Buku</h1>
+                <p>Pilih kategori untuk melihat buku-buku yang sesuai.</p>
+            </div>
+        </section>
+
+        <section class="section compact-top">
+            <div class="container">
+                <div class="category-panel" id="categoryPanel"></div>
+
+                <div class="section-heading category-results-heading">
+                    <div>
+                        <span class="eyebrow eyebrow-dark">BOOKS</span>
+                        <h2 id="categoryTitle">Semua Buku</h2>
+                        <p id="categoryDescription">Menampilkan seluruh koleksi yang tersedia.</p>
+                    </div>
+                    <a class="button button-outline" href="katalog-buku.html">Kembali ke Katalog</a>
+                </div>
+
+                <div class="book-grid" id="categoryGrid"></div>
+                <div class="empty-state" id="categoryEmpty" hidden>
+                    <div class="empty-icon">🗂️</div>
+                    <h3>Belum ada buku di kategori ini</h3>
+                    <p>Pilih kategori lain untuk melihat koleksi yang tersedia.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>LAFENADHER E-Library</strong>
+                <p>Koleksi bacaan digital untuk belajar dan berkembang.</p>
+            </div>
+            <p>&copy; 2026 LAFENADHER E-Library</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/script-buku.js"></script>
+</body>
+</html>
