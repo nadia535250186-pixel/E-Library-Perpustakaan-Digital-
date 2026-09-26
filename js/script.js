@@ -12,17 +12,26 @@ if (loginForm) {
             return;
         }
 
-        const userData = JSON.parse(localStorage.getItem("userData"));
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        if (!userData) {
-            alert("Akun belum terdaftar. Silakan register terlebih dahulu.");
-            return;
+        // Memindahkan akun lama ke daftar users
+        const oldUser = JSON.parse(localStorage.getItem("userData"));
+
+        if (users.length === 0 && oldUser) {
+            users.push(oldUser);
+            localStorage.setItem("users", JSON.stringify(users));
         }
 
-        if (email !== userData.email || password !== userData.password) {
+        const user = users.find(function(account) {
+            return account.email === email && account.password === password;
+        });
+
+        if (!user) {
             alert("Email atau password salah.");
             return;
         }
+
+        localStorage.setItem("currentUser", JSON.stringify(user));
 
         alert("Login berhasil!");
         window.location.href = "profile.html";
@@ -51,6 +60,25 @@ if (registerForm) {
             return;
         }
 
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Memindahkan akun lama ke daftar users
+        const oldUser = JSON.parse(localStorage.getItem("userData"));
+
+        if (users.length === 0 && oldUser) {
+            users.push(oldUser);
+        }
+
+        // Cek apakah email sudah digunakan
+        const emailExists = users.some(function(account) {
+            return account.email === email;
+        });
+
+        if (emailExists) {
+            alert("Email sudah terdaftar.");
+            return;
+        }
+
         let memberNumber = localStorage.getItem("nextMemberNumber");
 
         if (!memberNumber) {
@@ -66,7 +94,9 @@ if (registerForm) {
             memberNumber: formattedMemberNumber
         };
 
-        localStorage.setItem("userData", JSON.stringify(userData));
+        users.push(userData);
+
+        localStorage.setItem("users", JSON.stringify(users));
 
         memberNumber++;
         localStorage.setItem("nextMemberNumber", memberNumber);
@@ -80,14 +110,14 @@ if (registerForm) {
 const profileName = document.getElementById("profileName");
 
 if (profileName) {
-    const userData = JSON.parse(localStorage.getItem("userData"));
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-    if (userData) {
-        document.getElementById("profileName").textContent = userData.name;
-        document.getElementById("profileEmail").textContent = userData.email;
-        document.getElementById("profileNameInfo").textContent = userData.name;
-        document.getElementById("profileEmailInfo").textContent = userData.email;
-        document.getElementById("profileMemberInfo").textContent = userData.memberNumber;
+    if (currentUser) {
+        document.getElementById("profileName").textContent = currentUser.name;
+        document.getElementById("profileEmail").textContent = currentUser.email;
+        document.getElementById("profileNameInfo").textContent = currentUser.name;
+        document.getElementById("profileEmailInfo").textContent = currentUser.email;
+        document.getElementById("profileMemberInfo").textContent = currentUser.memberNumber;
     }
 }
 
@@ -96,10 +126,14 @@ const editProfile = document.getElementById("editProfile");
 
 if (editProfile) {
     editProfile.addEventListener("click", function() {
-        const userData = JSON.parse(localStorage.getItem("userData"));
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-        const newName = prompt("Masukkan nama baru:", userData.name);
-        const newEmail = prompt("Masukkan email baru:", userData.email);
+        if (!currentUser) {
+            return;
+        }
+
+        const newName = prompt("Masukkan nama baru:", currentUser.name);
+        const newEmail = prompt("Masukkan email baru:", currentUser.email);
 
         if (newName === null || newEmail === null) {
             return;
@@ -110,10 +144,21 @@ if (editProfile) {
             return;
         }
 
-        userData.name = newName;
-        userData.email = newEmail;
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        localStorage.setItem("userData", JSON.stringify(userData));
+        currentUser.name = newName;
+        currentUser.email = newEmail;
+
+        users = users.map(function(account) {
+            if (account.memberNumber === currentUser.memberNumber) {
+                return currentUser;
+            }
+
+            return account;
+        });
+
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
         document.getElementById("profileName").textContent = newName;
         document.getElementById("profileEmail").textContent = newEmail;
@@ -129,7 +174,7 @@ const logout = document.getElementById("logout");
 
 if (logout) {
     logout.addEventListener("click", function() {
-        localStorage.removeItem("userData");
+        localStorage.removeItem("currentUser");
 
         alert("Anda berhasil logout.");
         window.location.href = "login.html";
