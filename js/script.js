@@ -51,15 +51,27 @@ if (registerForm) {
             return;
         }
 
+        let memberNumber = localStorage.getItem("nextMemberNumber");
+
+        if (!memberNumber) {
+            memberNumber = 1;
+        }
+
+        const formattedMemberNumber = "LIB" + String(memberNumber).padStart(4, "0");
+
         const userData = {
             name: name,
             email: email,
-            password: password
+            password: password,
+            memberNumber: formattedMemberNumber
         };
 
         localStorage.setItem("userData", JSON.stringify(userData));
 
-        alert("Registrasi berhasil!");
+        memberNumber++;
+        localStorage.setItem("nextMemberNumber", memberNumber);
+
+        alert("Registrasi berhasil!\nNomor Anggota Anda: " + formattedMemberNumber);
         window.location.href = "login.html";
     });
 }
@@ -75,6 +87,7 @@ if (profileName) {
         document.getElementById("profileEmail").textContent = userData.email;
         document.getElementById("profileNameInfo").textContent = userData.name;
         document.getElementById("profileEmailInfo").textContent = userData.email;
+        document.getElementById("profileMemberInfo").textContent = userData.memberNumber;
     }
 }
 
@@ -117,6 +130,7 @@ const logout = document.getElementById("logout");
 if (logout) {
     logout.addEventListener("click", function() {
         localStorage.removeItem("userData");
+
         alert("Anda berhasil logout.");
         window.location.href = "login.html";
     });
