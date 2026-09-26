@@ -14,7 +14,6 @@ if (loginForm) {
 
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Memindahkan akun lama ke daftar users
         const oldUser = JSON.parse(localStorage.getItem("userData"));
 
         if (users.length === 0 && oldUser) {
@@ -62,14 +61,12 @@ if (registerForm) {
 
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Memindahkan akun lama ke daftar users
         const oldUser = JSON.parse(localStorage.getItem("userData"));
 
         if (users.length === 0 && oldUser) {
             users.push(oldUser);
         }
 
-        // Cek apakah email sudah digunakan
         const emailExists = users.some(function(account) {
             return account.email === email;
         });
