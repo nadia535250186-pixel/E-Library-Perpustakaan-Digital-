@@ -2,17 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+:root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --text: #252525;
+    --muted: #77716b;
+    --border: #e6dfd6;
+    --accent: #8b5e3c;
+    --accent-dark: #6f452c;
+    --dark: #202020;
+    --soft: #efe8df;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f8fc;
-    color: #1e293b;
+    font-family: "Times New Roman", Times, serif;
+    background: var(--bg);
+    color: var(--text);
 }
 
 header {
-    background: #12355b;
+    background: #ffffff;
     padding: 18px 8%;
+    border-bottom: 1px solid var(--border);
 }
 
 nav {
@@ -22,7 +36,7 @@ nav {
 }
 
 nav h1 {
-    color: white;
+    color: var(--dark);
     font-size: 26px;
 }
 
@@ -32,13 +46,13 @@ nav div {
 }
 
 nav a {
-    color: white;
+    color: var(--text);
     text-decoration: none;
     font-size: 15px;
 }
 
 nav a:hover {
-    color: #8ed1fc;
+    color: var(--accent);
 }
 
 .hero {
@@ -46,7 +60,7 @@ nav a:hover {
     padding: 90px 8%;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #eaf4ff, #ffffff);
+    background: linear-gradient(135deg, var(--soft), #ffffff);
 }
 
 .hero div {
@@ -56,7 +70,7 @@ nav a:hover {
 .hero h2 {
     font-size: 44px;
     line-height: 1.2;
-    color: #12355b;
+    color: var(--text);
     margin-bottom: 20px;
 }
 
@@ -64,7 +78,7 @@ nav a:hover {
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 30px;
-    color: #526273;
+    color: var(--muted);
 }
 
 .search-box {
@@ -76,7 +90,7 @@ nav a:hover {
 .search-box input {
     flex: 1;
     padding: 15px;
-    border: 1px solid #ccd6e0;
+    border: 1px solid var(--border);
     border-radius: 8px 0 0 8px;
     font-size: 15px;
 }
@@ -84,7 +98,7 @@ nav a:hover {
 .search-box button {
     padding: 15px 25px;
     border: none;
-    background: #2878b5;
+    background: var(--dark);
     color: white;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
@@ -93,7 +107,7 @@ nav a:hover {
 .catalog-button {
     display: inline-block;
     padding: 13px 24px;
-    background: #12355b;
+    background: var(--dark);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -107,7 +121,7 @@ nav a:hover {
 .categories h2,
 .books h2 {
     text-align: center;
-    color: #12355b;
+    color: var(--text);
     margin-bottom: 30px;
     font-size: 30px;
 }
@@ -119,23 +133,21 @@ nav a:hover {
     gap: 20px;
 }
 
-.category-card {
-    background: white;
+.category-card,
+.book-card {
+    background: var(--surface);
     padding: 25px 15px;
-    text-align: center;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(34, 26, 20, 0.06);
+}
+
+.category-card {
+    text-align: center;
 }
 
 .book-list {
     grid-template-columns: repeat(3, 1fr);
-}
-
-.book-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .book-cover {
@@ -143,8 +155,8 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #dceeff;
-    color: #2878b5;
+    background: var(--soft);
+    color: var(--accent);
     border-radius: 8px;
     margin-bottom: 15px;
     font-weight: bold;
@@ -152,15 +164,205 @@ nav a:hover {
 
 .book-card h3 {
     margin-bottom: 8px;
-    color: #12355b;
+    color: var(--text);
 }
 
 .book-card p {
-    color: #64748b;
+    color: var(--muted);
+}
+
+.about-hero {
+    padding: 70px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--soft), #ffffff);
+}
+
+.about-hero h2 {
+    color: var(--text);
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.about-hero p {
+    max-width: 750px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.about-content {
+    padding: 60px 8%;
+}
+
+.about-content h2,
+.team-info h2 {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.about-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(34, 26, 20, 0.06);
+}
+
+.about-card h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.vision-mission {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px 8% 60px;
+}
+
+.vision-mission div {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(34, 26, 20, 0.06);
+}
+
+.vision-mission h2 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.vision-mission p,
+.team-info p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.team-info {
+    padding: 20px 8% 70px;
+}
+
+.team-info p {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-hero {
+    padding: 70px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--soft), #ffffff);
+}
+
+.contact-hero h2 {
+    color: var(--text);
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.contact-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    padding: 60px 8%;
+}
+
+.contact-info,
+.contact-form {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(34, 26, 20, 0.06);
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    margin-bottom: 22px;
+}
+
+.contact-item h3 {
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+.contact-item p {
+    color: var(--muted);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 7px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    background: #ffffff;
+    color: var(--text);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: var(--dark);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.contact-form button:hover {
+    background: var(--accent-dark);
 }
 
 footer {
-    background: #12355b;
+    background: var(--dark);
     color: white;
     text-align: center;
     padding: 25px;
@@ -181,198 +383,9 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .book-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-.about-hero {
-    padding: 70px 8%;
-    text-align: center;
-    background: linear-gradient(135deg, #eaf4ff, #ffffff);
-}
-
-.about-hero h2 {
-    color: #12355b;
-    font-size: 38px;
-    margin-bottom: 18px;
-}
-
-.about-hero p {
-    max-width: 750px;
-    margin: auto;
-    color: #526273;
-    line-height: 1.7;
-}
-
-.about-content {
-    padding: 60px 8%;
-}
-
-.about-content h2,
-.team-info h2 {
-    text-align: center;
-    color: #12355b;
-    margin-bottom: 30px;
-}
-
-.about-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.about-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.about-card h3 {
-    color: #12355b;
-    margin-bottom: 12px;
-}
-
-.about-card p {
-    color: #64748b;
-    line-height: 1.7;
-}
-
-.vision-mission {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 20px 8% 60px;
-}
-
-.vision-mission div {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.vision-mission h2 {
-    color: #12355b;
-    margin-bottom: 15px;
-}
-
-.vision-mission p,
-.team-info p {
-    color: #64748b;
-    line-height: 1.7;
-}
-
-.team-info {
-    padding: 20px 8% 70px;
-}
-
-.team-info p {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
+    .book-list,
     .about-list,
-    .vision-mission {
-        grid-template-columns: 1fr;
-    }
-}
-.contact-hero {
-    padding: 70px 8%;
-    text-align: center;
-    background: linear-gradient(135deg, #eaf4ff, #ffffff);
-}
-
-.contact-hero h2 {
-    color: #12355b;
-    font-size: 38px;
-    margin-bottom: 18px;
-}
-
-.contact-hero p {
-    max-width: 700px;
-    margin: auto;
-    color: #526273;
-    line-height: 1.7;
-}
-
-.contact-section {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 30px;
-    padding: 60px 8%;
-}
-
-.contact-info,
-.contact-form {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.contact-info h2,
-.contact-form h2 {
-    color: #12355b;
-    margin-bottom: 25px;
-}
-
-.contact-item {
-    margin-bottom: 22px;
-}
-
-.contact-item h3 {
-    color: #2878b5;
-    margin-bottom: 6px;
-}
-
-.contact-item p {
-    color: #64748b;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-bottom: 7px;
-    color: #334155;
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 13px;
-    margin-bottom: 18px;
-    border: 1px solid #ccd6e0;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background: #12355b;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.contact-form button:hover {
-    background: #2878b5;
-}
-
-@media (max-width: 768px) {
+    .vision-mission,
     .contact-section {
         grid-template-columns: 1fr;
     }
