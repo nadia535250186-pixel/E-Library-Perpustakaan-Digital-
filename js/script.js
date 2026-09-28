@@ -65,6 +65,7 @@ if (slider && slides.length > 0) {
     showSlide(0);
 }
 
+
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -242,5 +243,22 @@ if (logout) {
 
         alert("Anda berhasil logout.");
         window.location.href = "login.html";
+    });
+}
+
+
+const profileNav = document.getElementById("profileNav");
+
+if (profileNav) {
+    profileNav.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (currentUser) {
+            window.location.href = "profile.html";
+        } else {
+            window.location.href = "login.html";
+        }
     });
 }
