@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f5ef;
+    color: #3d332b;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 2rem 10%;
+
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #eee6dc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: #3d332b;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "L";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    background-color: #302a25;
+    color: white;
+
+    border-radius: 0.8rem;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: #8a6848;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: #4a4038;
+
+    font-size: 1.4rem;
+    margin-left: 2.8rem;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #9a7653;
+}
+
+#menu-icon {
+    display: none;
+
+    font-size: 3rem;
+    color: #3d332b;
+
+    cursor: pointer;
+}
+
+body {
+    padding-top: 8rem;
+}
+
+body > h1 {
+    text-align: center;
+
+    font-size: 4rem;
+    color: #3d332b;
+
+    margin-top: 6rem;
+    margin-bottom: 1.5rem;
+}
+
+body > p {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 5rem;
+
+    padding: 0 2rem;
+
+    font-size: 1.5rem;
+    line-height: 1.8;
+
+    color: #766b62;
+}
+
+.book-card {
+    width: 75%;
+    max-width: 900px;
+
+    margin: 0 auto 2.5rem;
+
+    padding: 3rem 3.5rem;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eee6dc;
+    border-radius: 0.8rem;
+
+    box-shadow: 0 3px 12px rgba(60, 45, 30, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 18px rgba(60, 45, 30, 0.12);
+}
+
+.book-card h2 {
+    color: #4a382b;
+
+    font-size: 2.4rem;
+
+    margin-bottom: 1.8rem;
+}
+
+.book-card p {
+    color: #6f6258;
+
+    font-size: 1.5rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 0.6rem;
+}
+
+.book-card a {
+    display: inline-block;
+
+    margin-top: 1.8rem;
+
+    padding: 1rem 2rem;
+
+    background-color: #4a382b;
+    color: white;
+
+    border-radius: 0.5rem;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.book-card a:hover {
+    background-color: #8a6848;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b59a7b;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f8f5ef;
+}
+
+@media (max-width: 991px) {
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .book-card {
+        width: 85%;
+    }
+
+    body > h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+
+        top: 100%;
+        right: 0;
+
+        width: 60%;
+
+        padding: 1rem 2.5rem;
+
+        background-color: #ffffff;
+
+        border-left: 1px solid #eee6dc;
+        border-bottom: 1px solid #eee6dc;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        box-shadow: 0 5px 15px rgba(60, 45, 30, 0.1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        display: block;
+
+        width: 100%;
+
+        margin: 1.8rem 0;
+
+        font-size: 1.6rem;
+    }
+
+    body > h1 {
+        font-size: 3.2rem;
+
+        margin-top: 4rem;
+    }
+
+    body > p {
+        font-size: 1.4rem;
+
+        margin-bottom: 3rem;
+    }
+
+    .book-card {
+        width: 90%;
+
+        padding: 2.5rem 2rem;
+    }
+
+    .book-card h2 {
+        font-size: 2.1rem;
+    }
+
+    .book-card p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .logo::before {
+        width: 3rem;
+        height: 3rem;
+
+        font-size: 1.5rem;
+    }
+
+    body > h1 {
+        font-size: 2.7rem;
+    }
+
+    .book-card {
+        width: 92%;
+
+        padding: 2rem 1.8rem;
+    }
+
+    .book-card h2 {
+        font-size: 1.9rem;
+    }
+
+    .book-card p {
+        font-size: 1.35rem;
+    }
+
+    .book-card a {
+        font-size: 1.3rem;
+        padding: 0.9rem 1.7rem;
+    }
+}
+
+.recommendation {
+    padding: 4rem 8%;
+    text-align: center;
+}
+
+.recommendation > h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.recommendation > p {
+    margin-bottom: 5rem;
+}
+
+.book-category {
+    margin-bottom: 5rem;
+}
+
+.book-category > h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    color: #4a382b;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.book-container .book-card {
+    width: 100%;
+    margin: 0;
+}
