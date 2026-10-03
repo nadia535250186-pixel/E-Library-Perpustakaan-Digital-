@@ -1,3 +1,41 @@
+function readLocalValue(key) {
+    try {
+        return localStorage.getItem(key);
+    } catch {
+        return null;
+    }
+}
+
+function writeLocalValue(key, value) {
+    try {
+        localStorage.setItem(key, value);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+function readLocalJson(key, fallback) {
+    try {
+        const raw = readLocalValue(key);
+        return raw ? JSON.parse(raw) : fallback;
+    } catch {
+        return fallback;
+    }
+}
+
+function writeLocalJson(key, value) {
+    return writeLocalValue(key, JSON.stringify(value));
+}
+
+function removeLocalValue(key) {
+    try {
+        localStorage.removeItem(key);
+    } catch {
+        // The page still works if browser storage is disabled.
+    }
+}
+
 const slider = document.querySelector(".hero-slider");
 const slides = document.querySelectorAll(".hero-slide");
 const prevButton = document.querySelector(".slider-prev");
@@ -72,25 +110,27 @@ if (loginForm) {
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
+        const email = document.getElementById("email").value.trim().toLowerCase();
         const password = document.getElementById("password").value;
 
         if (email === "" || password === "") {
-            alert("Email/Username dan password harus diisi.");
+            alert("Email dan password harus diisi.");
             return;
         }
 
-        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let users = readLocalJson("users", []);
+        if (!Array.isArray(users)) users = [];
+        users = users.filter(account => account && typeof account === "object");
 
-        const oldUser = JSON.parse(localStorage.getItem("userData"));
+        const oldUser = readLocalJson("userData", null);
 
-        if (users.length === 0 && oldUser) {
+        if (users.length === 0 && oldUser && typeof oldUser === "object") {
             users.push(oldUser);
-            localStorage.setItem("users", JSON.stringify(users));
+            writeLocalJson("users", users);
         }
 
         const user = users.find(function(account) {
-            return account.email === email && account.password === password;
+            return String(account.email || "").trim().toLowerCase() === email && account.password === password;
         });
 
         if (!user) {
@@ -98,7 +138,10 @@ if (loginForm) {
             return;
         }
 
-        localStorage.setItem("currentUser", JSON.stringify(user));
+        if (!writeLocalJson("currentUser", user)) {
+            alert("Browser tidak mengizinkan penyimpanan sesi. Aktifkan penyimpanan lokal lalu coba lagi.");
+            return;
+        }
 
         alert("Login berhasil!");
         window.location.href = "profile.html";
@@ -112,8 +155,8 @@ if (registerForm) {
     registerForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("registerEmail").value;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("registerEmail").value.trim().toLowerCase();
         const password = document.getElementById("registerPassword").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -127,16 +170,19 @@ if (registerForm) {
             return;
         }
 
-        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let users = readLocalJson("users", []);
+        if (!Array.isArray(users)) users = [];
+        users = users.filter(account => account && typeof account === "object");
 
-        const oldUser = JSON.parse(localStorage.getItem("userData"));
+        const oldUser = readLocalJson("userData", null);
 
-        if (users.length === 0 && oldUser) {
+        if (users.length === 0 && oldUser && typeof oldUser === "object") {
             users.push(oldUser);
+            writeLocalJson("users", users);
         }
 
         const emailExists = users.some(function(account) {
-            return account.email === email;
+            return String(account.email || "").trim().toLowerCase() === email;
         });
 
         if (emailExists) {
@@ -144,11 +190,12 @@ if (registerForm) {
             return;
         }
 
-        let memberNumber = localStorage.getItem("nextMemberNumber");
-
-        if (!memberNumber) {
-            memberNumber = 1;
-        }
+        const nextMemberNumber = Number.parseInt(readLocalValue("nextMemberNumber"), 10) || 1;
+        const highestMemberNumber = users.reduce(function(highest, account) {
+            const match = String(account.memberNumber || "").match(/^LIB(\d+)$/i);
+            return match ? Math.max(highest, Number(match[1]) + 1) : highest;
+        }, 1);
+        const memberNumber = Math.max(nextMemberNumber, highestMemberNumber);
 
         const formattedMemberNumber = "LIB" + String(memberNumber).padStart(4, "0");
 
@@ -161,10 +208,12 @@ if (registerForm) {
 
         users.push(userData);
 
-        localStorage.setItem("users", JSON.stringify(users));
+        if (!writeLocalJson("users", users)) {
+            alert("Browser tidak mengizinkan penyimpanan akun. Aktifkan penyimpanan lokal lalu coba lagi.");
+            return;
+        }
 
-        memberNumber++;
-        localStorage.setItem("nextMemberNumber", memberNumber);
+        writeLocalValue("nextMemberNumber", String(memberNumber + 1));
 
         alert("Registrasi berhasil!\nNomor Anggota Anda: " + formattedMemberNumber);
         window.location.href = "login.html";
@@ -175,14 +224,16 @@ if (registerForm) {
 const profileName = document.getElementById("profileName");
 
 if (profileName) {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const currentUser = readLocalJson("currentUser", null);
 
     if (currentUser) {
         document.getElementById("profileName").textContent = currentUser.name;
         document.getElementById("profileEmail").textContent = currentUser.email;
         document.getElementById("profileNameInfo").textContent = currentUser.name;
         document.getElementById("profileEmailInfo").textContent = currentUser.email;
-        document.getElementById("profileMemberInfo").textContent = currentUser.memberNumber;
+        document.getElementById("profileMemberInfo").textContent = currentUser.memberNumber || "Belum tersedia";
+    } else {
+        window.location.replace("login.html");
     }
 }
 
@@ -191,7 +242,7 @@ const editProfile = document.getElementById("editProfile");
 
 if (editProfile) {
     editProfile.addEventListener("click", function() {
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const currentUser = readLocalJson("currentUser", null);
 
         if (!currentUser) {
             return;
@@ -204,31 +255,56 @@ if (editProfile) {
             return;
         }
 
-        if (newName === "" || newEmail === "") {
+        const normalizedName = newName.trim();
+        const normalizedEmail = newEmail.trim().toLowerCase();
+
+        if (!normalizedName || !normalizedEmail) {
             alert("Nama dan email tidak boleh kosong.");
             return;
         }
 
-        let users = JSON.parse(localStorage.getItem("users")) || [];
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+            alert("Masukkan alamat email yang valid.");
+            return;
+        }
 
-        currentUser.name = newName;
-        currentUser.email = newEmail;
+        let users = readLocalJson("users", []);
+        if (!Array.isArray(users)) users = [];
+        users = users.filter(account => account && typeof account === "object");
 
-        users = users.map(function(account) {
-            if (account.memberNumber === currentUser.memberNumber) {
-                return currentUser;
-            }
-
-            return account;
+        const duplicateEmail = users.some(function(account) {
+            const sameAccount = currentUser.memberNumber
+                ? account.memberNumber === currentUser.memberNumber
+                : String(account.email || "").trim().toLowerCase() === String(currentUser.email || "").trim().toLowerCase();
+            return !sameAccount &&
+                String(account.email || "").trim().toLowerCase() === normalizedEmail;
         });
 
-        localStorage.setItem("users", JSON.stringify(users));
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        if (duplicateEmail) {
+            alert("Email tersebut sudah digunakan akun lain.");
+            return;
+        }
 
-        document.getElementById("profileName").textContent = newName;
-        document.getElementById("profileEmail").textContent = newEmail;
-        document.getElementById("profileNameInfo").textContent = newName;
-        document.getElementById("profileEmailInfo").textContent = newEmail;
+        currentUser.name = normalizedName;
+        currentUser.email = normalizedEmail;
+
+        const userIndex = users.findIndex(function(account) {
+            return currentUser.memberNumber
+                ? account.memberNumber === currentUser.memberNumber
+                : String(account.email || "").trim().toLowerCase() === String(currentUser.email || "").trim().toLowerCase();
+        });
+        if (userIndex === -1) users.push(currentUser);
+        else users[userIndex] = currentUser;
+
+        if (!writeLocalJson("users", users) || !writeLocalJson("currentUser", currentUser)) {
+            alert("Perubahan profil tidak dapat disimpan oleh browser.");
+            return;
+        }
+
+        document.getElementById("profileName").textContent = normalizedName;
+        document.getElementById("profileEmail").textContent = normalizedEmail;
+        document.getElementById("profileNameInfo").textContent = normalizedName;
+        document.getElementById("profileEmailInfo").textContent = normalizedEmail;
 
         alert("Profile berhasil diperbarui.");
     });
@@ -239,7 +315,7 @@ const logout = document.getElementById("logout");
 
 if (logout) {
     logout.addEventListener("click", function() {
-        localStorage.removeItem("currentUser");
+        removeLocalValue("currentUser");
 
         alert("Anda berhasil logout.");
         window.location.href = "login.html";
@@ -253,7 +329,7 @@ if (profileNav) {
     profileNav.addEventListener("click", function(event) {
         event.preventDefault();
 
-        const currentUser = localStorage.getItem("currentUser");
+        const currentUser = readLocalJson("currentUser", null);
 
         if (currentUser) {
             window.location.href = "profile.html";
@@ -262,3 +338,51 @@ if (profileNav) {
         }
     });
 }
+
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("pesan").value.trim();
+        const subject = encodeURIComponent(`Pesan dari ${name} — LAFENADHER E-Library`);
+        const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\n${message}`);
+        const status = document.getElementById("contactFormStatus");
+
+        if (status) {
+            status.textContent = "Aplikasi email dibuka untuk menyelesaikan pengiriman pesan.";
+        }
+
+        window.location.href = `mailto:elibrary@example.com?subject=${subject}&body=${body}`;
+    });
+}
+
+
+document.querySelectorAll(".menu-dropdown").forEach(function(menu) {
+    const button = menu.querySelector(".menu-button");
+    if (!button) return;
+
+    button.addEventListener("click", function() {
+        const isOpen = menu.classList.toggle("open");
+        button.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!menu.contains(event.target)) {
+            menu.classList.remove("open");
+            button.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    menu.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            menu.classList.remove("open");
+            button.setAttribute("aria-expanded", "false");
+            button.focus();
+        }
+    });
+});

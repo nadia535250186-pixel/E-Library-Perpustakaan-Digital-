@@ -421,20 +421,216 @@ const BOOKS = [
         source: "Square Enix Manga",
         sourceLink: "https://books.google.com/books/about/The_Apothecary_Diaries_01_Manga.html?id=7rGQEAAAQBAJ",
         description: "Maomao, gadis yang terlatih dalam pengobatan herbal, dipaksa bekerja sebagai pelayan di istana kekaisaran. Setelah membantu memecahkan misteri penyakit para pewaris takhta, ia dipromosikan dan terlibat dalam berbagai kasus serta intrik istana."
+    },
+    {
+        id: "laskar-pelangi",
+        title: "Laskar Pelangi",
+        author: "Andrea Hirata",
+        publisher: "Bentang Pustaka",
+        year: 2005,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/laskar-pelangi.pdf",
+        description: "Kisah sepuluh anak dari keluarga sederhana yang berjuang mendapatkan pendidikan di Belitong."
+    },
+    {
+        id: "pada-senja-yang-membawamu-pergi",
+        title: "Pada Senja yang Membawamu Pergi",
+        author: "Boy Candra",
+        publisher: "Gagas Media",
+        year: 2016,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/pada-senja-yang-membawamu-pergi.pdf",
+        description: "Kisah tentang cinta, harapan, dan kenangan yang kembali hadir sebagai alasan untuk terus melangkah."
+    },
+    {
+        id: "negeri-lima-menara",
+        title: "Negeri 5 Menara",
+        author: "Ahmad Fuadi",
+        publisher: "Gramedia",
+        year: 2009,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/negeri-lima-menara.pdf",
+        description: "Perjalanan Alif Fikri dan sahabat-sahabatnya di Pondok Madani, ditemani semangat untuk meraih cita-cita."
+    },
+    {
+        id: "matahari",
+        title: "Matahari",
+        author: "Tere Liye",
+        publisher: "Gramedia Pustaka Utama",
+        year: 2016,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/matahari.pdf",
+        description: "Petualangan Raib, Seli, dan Ali berlanjut saat mereka menghadapi tantangan baru di dunia paralel."
+    },
+    {
+        id: "tenggelamnya-kapal-van-der-wijck",
+        title: "Tenggelamnya Kapal Van der Wijck",
+        author: "Haji Abdul Malik Karim Amrullah",
+        publisher: "Gema Insani",
+        year: 1938,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/tenggelamnya-kapal-van-der-wijck.pdf",
+        description: "Kisah cinta yang terhalang adat dan perbedaan latar sosial di Minangkabau."
+    },
+    {
+        id: "bumi-cinta",
+        title: "Bumi Cinta",
+        author: "Habiburrahman El-Shirazy",
+        publisher: "Republika",
+        year: 2019,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/bumi-cinta.pdf",
+        description: "Perjalanan seorang mahasiswa Indonesia yang berusaha menjaga prinsip hidup selama menempuh studi di luar negeri."
+    },
+    {
+        id: "sengsara-membawa-nikmat",
+        title: "Sengsara Membawa Nikmat",
+        author: "Sutan Sati",
+        publisher: "Balai Pustaka",
+        year: 1929,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/sengsara-membawa-nikmat.pdf",
+        description: "Pengembaraan Midun dalam kisah klasik yang melintasi Sumatra hingga Jawa."
+    },
+    {
+        id: "the-seven-spirits-of-god",
+        title: "The Seven Spirits of God",
+        author: "Ron Auch",
+        publisher: "New Leaf Press",
+        year: 1993,
+        language: "English",
+        category: "Spiritualitas",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/the-seven-spirits-of-god.pdf",
+        description: "Pembahasan mengenai tujuh roh Allah dalam ajaran Alkitab dan kaitannya dengan kehidupan rohani."
+    },
+    {
+        id: "dunia-sophie-sebuah-novel-filsafat",
+        title: "Dunia Sophie: Sebuah Novel Filsafat",
+        author: "Jostein Gaarder",
+        publisher: "Mizan",
+        year: 2020,
+        language: "Indonesia",
+        category: "Filsafat",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/dunia-sophie-sebuah-novel-filsafat.pdf",
+        description: "Sophie menerima pertanyaan-pertanyaan misterius yang mengantarnya mengenal sejarah dan pemikiran filsafat."
+    },
+    {
+        id: "dalam-mihrab-cinta",
+        title: "Dalam Mihrab Cinta",
+        author: "Habiburrahman El Shirazy",
+        publisher: "Republika",
+        year: 2020,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/dalam-mihrab-cinta.pdf",
+        description: "Kisah tentang ketegaran, ketulusan, dan perjalanan cinta yang tumbuh di jalan Allah."
+    },
+    {
+        id: "royan-revolusi",
+        title: "Royan Revolusi",
+        author: "Ramadhan K.H.",
+        publisher: "Gunung Agung",
+        year: 1970,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/royan-revolusi.pdf",
+        description: "Idrus berusaha mempertahankan nuraninya ketika kembali ke desa yang dipenuhi manipulasi dan perebutan kepentingan."
+    },
+    {
+        id: "di-atas-sajadah-cinta",
+        title: "Di Atas Sajadah Cinta",
+        author: "Habiburrahman El Shirazy",
+        publisher: "Republika",
+        year: 2006,
+        language: "Indonesia",
+        category: "Spiritualitas",
+        format: "PDF",
+        cover: null,
+        pdf: "buku/di atas-sajadah-cinta.pdf",
+        description: "Kumpulan kisah teladan Islami yang menguatkan iman dan menenteramkan hati."
     }
 ];
 
+const COLLECTIONS = {
+    popular: {
+        title: "Buku Populer",
+        eyebrow: "BANYAK DICARI",
+        description: "Pilihan bacaan yang sering menjadi teman pembaca.",
+        ids: ["laskar-pelangi", "ayah-andrea-hirata", "pada-senja-yang-membawamu-pergi", "senja-hujan-cerita", "negeri-lima-menara"]
+    },
+    latest: {
+        title: "Buku Terbaru",
+        eyebrow: "KOLEKSI TERBARU",
+        description: "Koleksi disusun berdasarkan tahun terbit terbaru.",
+        ids: null
+    },
+    recommended: {
+        title: "Buku Rekomendasi",
+        eyebrow: "PILIHAN EDITOR",
+        description: "Pilihan bacaan lintas genre untuk dijelajahi berikutnya.",
+        ids: ["biokimia-harper-edisi-27", "the-fate-of-the-tearling", "astawana-penjaga-condet", "the-apothecary-diaries-01", "keys-to-drawing"]
+    }
+};
+
 const STORAGE_KEY = "lafa-elibrary-favorites";
-let favorites = [];
-try {
-    const storedFavorites = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    favorites = Array.isArray(storedFavorites) ? storedFavorites : [];
-} catch {
-    favorites = [];
+const HISTORY_KEY = "lafa-elibrary-reading-history";
+
+function readStoredIds(key) {
+    try {
+        const value = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(value) ? value.filter(id => typeof id === "string") : [];
+    } catch {
+        return [];
+    }
 }
+
+function writeStoredIds(key, ids) {
+    try {
+        localStorage.setItem(key, JSON.stringify(ids));
+        return true;
+    } catch {
+        showToast("Browser tidak dapat menyimpan perubahan. Periksa pengaturan penyimpanan.");
+        return false;
+    }
+}
+
+let favorites = [...new Set(readStoredIds(STORAGE_KEY))];
 
 function getBook(id) {
     return BOOKS.find(book => book.id === id);
+}
+
+function encodeAssetPath(path) {
+    return String(path).split("/").map(part => encodeURIComponent(part)).join("/");
 }
 
 function isFavorite(id) {
@@ -442,7 +638,24 @@ function isFavorite(id) {
 }
 
 function saveFavorites() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    writeStoredIds(STORAGE_KEY, favorites);
+}
+
+function getHistoryIds() {
+    return [...new Set(readStoredIds(HISTORY_KEY))].filter(id => getBook(id));
+}
+
+function recordRead(id) {
+    if (!getBook(id)) return;
+    const historyIds = getHistoryIds().filter(savedId => savedId !== id);
+    historyIds.unshift(id);
+    writeStoredIds(HISTORY_KEY, historyIds.slice(0, 50));
+    document.dispatchEvent(new CustomEvent("history-changed"));
+}
+
+function clearReadHistory() {
+    writeStoredIds(HISTORY_KEY, []);
+    document.dispatchEvent(new CustomEvent("history-changed"));
 }
 
 function toggleFavorite(id) {
@@ -473,10 +686,10 @@ function showToast(message) {
 
 function getCoverMarkup(book, overlay = true) {
     const fallback = escapeHtml(book.title.slice(0, 2).toUpperCase());
-    const fallbackMarkup = `<div class="cover-fallback" aria-hidden="true" hidden><strong>${fallback}</strong><span>Cover belum tersedia</span></div>`;
+    const fallbackMarkup = `<div class="cover-fallback" aria-hidden="true" hidden><strong>${fallback}</strong><span>${escapeHtml(book.category)}</span><em>${escapeHtml(book.title)}</em></div>`;
     const image = book.cover
-        ? `<img src="${escapeAttribute(book.cover)}" alt="Cover ${escapeHtml(book.title)}" loading="lazy" onerror="this.hidden=true; this.nextElementSibling.hidden=false; this.closest('.book-cover, .detail-cover')?.classList.add('cover-missing');">${fallbackMarkup}`
-        : `<div class="cover-fallback" aria-hidden="true"><strong>${fallback}</strong><span>Cover belum tersedia</span></div>`;
+        ? `<img src="${escapeAttribute(encodeAssetPath(book.cover))}" alt="Cover ${escapeHtml(book.title)}" loading="lazy" onerror="this.hidden=true; this.nextElementSibling.hidden=false; this.closest('.book-cover, .detail-cover')?.classList.add('cover-missing');">${fallbackMarkup}`
+        : `<div class="cover-fallback" aria-hidden="true"><strong>${fallback}</strong><span>${escapeHtml(book.category)}</span><em>${escapeHtml(book.title)}</em></div>`;
 
     const synopsis = overlay
         ? `<div class="cover-synopsis"><span>Sinopsis</span><p>${escapeHtml(book.description)}</p><small>Klik untuk melihat detail</small></div>`
@@ -495,11 +708,11 @@ function createBookCard(book) {
         </a>
         <div class="book-body">
             <span class="book-category">${escapeHtml(book.category)}</span>
-            <h3 class="book-title">${escapeHtml(book.title)}</h3>
+            <h3 class="book-title"><a href="detail-buku.html?id=${encodeURIComponent(book.id)}">${escapeHtml(book.title)}</a></h3>
             <p class="book-author">${escapeHtml(book.author)}</p>
             ${book.year ? `<p class="book-year">Terbit ${escapeHtml(String(book.year))}</p>` : ""}
             <div class="card-actions">
-                <a class="button button-dark" href="detail-buku.html?id=${encodeURIComponent(book.id)}">Lihat Detail</a>
+                <a class="button button-dark" href="${book.pdf ? `baca-buku.html?id=${encodeURIComponent(book.id)}` : `detail-buku.html?id=${encodeURIComponent(book.id)}`}">${book.pdf ? "Baca PDF" : "Lihat Detail"}</a>
                 <button class="button button-accent favorite-card-button" data-book-id="${escapeAttribute(book.id)}" type="button">${favorite ? "♥ Tersimpan" : "♡ Simpan"}</button>
             </div>
         </div>
@@ -510,6 +723,24 @@ function createBookCard(book) {
 
 function getCategories() {
     return [...new Set(BOOKS.map(book => book.category))];
+}
+
+function renderCollectionPage() {
+    const grid = document.getElementById("collectionGrid");
+    const pageKey = document.body.dataset.collection;
+    const collection = COLLECTIONS[pageKey];
+    if (!grid || !collection) return;
+
+    const books = collection.ids
+        ? collection.ids.map(getBook).filter(Boolean)
+        : [...BOOKS].filter(book => book.pdf).sort((a, b) => (b.year || 0) - (a.year || 0));
+
+    document.title = `${collection.title} | LAFENADHER E-Library`;
+    document.getElementById("collectionEyebrow").textContent = collection.eyebrow;
+    document.getElementById("collectionTitle").textContent = collection.title;
+    document.getElementById("collectionDescription").textContent = collection.description;
+    document.getElementById("collectionCount").textContent = `${books.length} buku`;
+    grid.replaceChildren(...books.map(createBookCard));
 }
 
 function createChip(label, active, onClick) {
@@ -624,8 +855,8 @@ function createReadActions(book, saved) {
     const buttons = [];
 
     if (book.pdf) {
-        buttons.push(`<a class="button button-dark" href="${escapeAttribute(book.pdf)}" target="_blank" rel="noopener">📖 Baca PDF</a>`);
-        buttons.push(`<a class="button button-accent" href="${escapeAttribute(book.pdf)}" download>⬇ Unduh PDF</a>`);
+        buttons.push(`<a class="button button-dark" href="baca-buku.html?id=${encodeURIComponent(book.id)}">📖 Baca Buku</a>`);
+        buttons.push(`<a class="button button-accent" href="${escapeAttribute(encodeAssetPath(book.pdf))}" download>⬇ Unduh PDF</a>`);
     } else if (book.sourceLink) {
         buttons.push(`<a class="button button-dark" href="${escapeAttribute(book.sourceLink)}" target="_blank" rel="noopener">🔗 Lihat Sumber</a>`);
     } else {
@@ -698,6 +929,155 @@ function renderDetailPage() {
 
     const favoriteButton = document.getElementById("favoriteButton");
     favoriteButton?.addEventListener("click", () => toggleFavorite(book.id));
+    document.addEventListener("favorites-changed", () => {
+        const isSaved = isFavorite(book.id);
+        favoriteButton?.classList.toggle("saved", isSaved);
+        if (favoriteButton) favoriteButton.textContent = isSaved ? "♥ Sudah Disimpan" : "♡ Simpan ke Favorit";
+    });
+}
+
+function renderReaderPage() {
+    const wrapper = document.getElementById("readerContent");
+    if (!wrapper) return;
+
+    const availableBooks = BOOKS.filter(book => book.pdf);
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("id") || "biokimia-harper-edisi-27";
+    const book = getBook(requestedId);
+    const readerCount = document.getElementById("readerCount");
+
+    if (readerCount) readerCount.textContent = String(availableBooks.length).padStart(2, "0");
+
+    if (!book) {
+        document.title = "Buku Tidak Ditemukan | LAFENADHER E-Library";
+        wrapper.innerHTML = `
+            <div class="reader-empty error-message">
+                <span class="reader-empty-mark" aria-hidden="true">L</span>
+                <h2>Buku tidak ditemukan</h2>
+                <p>Pilih buku dari rak atau kembali ke katalog untuk menemukan bacaan.</p>
+                <a class="button button-dark" href="katalog-buku.html">Kembali ke Katalog</a>
+            </div>
+        `;
+        return;
+    }
+
+    document.title = `Baca ${book.title} | LAFENADHER E-Library`;
+    if (book.pdf) recordRead(book.id);
+
+    const pdfUrl = book.pdf ? encodeAssetPath(book.pdf) : "";
+    const categories = [...new Set(availableBooks.map(item => item.category))];
+    const selectedCategory = params.get("kategori") || "Semua";
+    const viewerContent = book.pdf
+        ? `
+            <div class="pdf-container">
+                <iframe src="${escapeAttribute(pdfUrl)}#toolbar=1&navpanes=0&view=FitH" title="Pembaca PDF: ${escapeHtml(book.title)}"></iframe>
+            </div>
+            <div class="reader-pdf-fallback">
+                <span class="reader-pdf-note"><span class="reader-pdf-dot" aria-hidden="true"></span> File PDF lokal siap dibaca</span>
+                <a class="reader-open-link" href="${escapeAttribute(pdfUrl)}" target="_blank" rel="noopener noreferrer">Buka di tab baru <span aria-hidden="true">↗</span></a>
+            </div>
+        `
+        : `
+            <div class="reader-empty error-message">
+                <span class="reader-empty-mark" aria-hidden="true">PDF</span>
+                <h2>PDF belum tersedia</h2>
+                <p>Buku ini belum memiliki berkas PDF di perpustakaan.</p>
+                ${book.sourceLink ? `<a class="button button-dark" href="${escapeAttribute(book.sourceLink)}" target="_blank" rel="noopener noreferrer">Buka sumber buku</a>` : ""}
+            </div>
+        `;
+
+    wrapper.innerHTML = `
+        <div class="reader-workspace">
+            <aside class="reader-library" aria-label="Rak buku PDF">
+                <div class="reader-library-heading">
+                    <div>
+                        <span class="reader-kicker">KOLEKSI</span>
+                        <h2>Rak bacaan</h2>
+                    </div>
+                    <span class="reader-library-count">${availableBooks.length} buku</span>
+                </div>
+                <label class="reader-search">
+                    <span class="reader-search-icon" aria-hidden="true">⌕</span>
+                    <span class="sr-only">Cari buku</span>
+                    <input id="readerSearch" type="search" placeholder="Cari judul atau penulis" autocomplete="off">
+                    <kbd>/</kbd>
+                </label>
+                <label class="reader-category-label" for="readerCategory">Jelajahi kategori</label>
+                <select id="readerCategory" class="reader-category-select" aria-label="Filter kategori buku">
+                    <option value="Semua">Semua kategori</option>
+                    ${categories.map(category => `<option value="${escapeAttribute(category)}"${category === selectedCategory ? " selected" : ""}>${escapeHtml(category)}</option>`).join("")}
+                </select>
+                <div class="reader-list-caption"><span>SEMUA BUKU</span><span id="readerResultCount">${availableBooks.length}</span></div>
+                <div class="reader-library-list" id="readerLibraryList" role="list"></div>
+                <a class="reader-library-footer" href="katalog-buku.html"><span aria-hidden="true">＋</span> Temukan buku lain</a>
+            </aside>
+
+            <section class="reader-main" aria-label="Pembaca buku">
+                <div class="reader-book-heading">
+                    <div class="reader-book-heading-copy">
+                        <a class="reader-back-link" href="detail-buku.html?id=${encodeURIComponent(book.id)}"><span aria-hidden="true">←</span> Detail buku</a>
+                        <div class="reader-title-line">
+                            <h1>${escapeHtml(book.title)}</h1>
+                            ${book.pdf ? '<span class="reader-format">PDF</span>' : '<span class="reader-format is-unavailable">BELUM ADA PDF</span>'}
+                        </div>
+                        <p class="reader-meta">${escapeHtml(book.author)} <span aria-hidden="true">·</span> ${escapeHtml(book.category)}${book.year ? ` <span aria-hidden="true">·</span> ${escapeHtml(String(book.year))}` : ""}</p>
+                    </div>
+                    <div class="reader-buttons">
+                        <a class="reader-detail-button" href="detail-buku.html?id=${encodeURIComponent(book.id)}">Info buku</a>
+                        ${book.pdf ? `<a class="reader-download-button" href="${escapeAttribute(pdfUrl)}" download><span aria-hidden="true">↓</span> Unduh PDF</a>` : ""}
+                    </div>
+                </div>
+                <section class="reader-book" aria-label="Berkas buku ${escapeHtml(book.title)}">
+                    ${viewerContent}
+                </section>
+                <p class="reader-privacy-note"><span aria-hidden="true">✦</span> Ruang baca pribadi · Koleksi tersimpan di perpustakaan ini</p>
+            </section>
+        </div>
+    `;
+
+    const list = document.getElementById("readerLibraryList");
+    const search = document.getElementById("readerSearch");
+    const categorySelect = document.getElementById("readerCategory");
+    const resultCount = document.getElementById("readerResultCount");
+
+    const renderLibraryList = () => {
+        const keyword = search.value.trim().toLowerCase();
+        const category = categorySelect.value;
+        const filtered = availableBooks.filter(item => {
+            const text = `${item.title} ${item.author} ${item.category}`.toLowerCase();
+            return text.includes(keyword) && (category === "Semua" || item.category === category);
+        });
+
+        resultCount.textContent = String(filtered.length).padStart(2, "0");
+        list.innerHTML = filtered.length
+            ? filtered.map(item => `
+                <button class="reader-book-option${item.id === book.id ? " is-active" : ""}" type="button" role="listitem" data-book-id="${escapeAttribute(item.id)}" aria-current="${item.id === book.id ? "true" : "false"}">
+                    <span class="reader-thumb">${item.cover ? `<img src="${escapeAttribute(encodeAssetPath(item.cover))}" alt="" loading="lazy">` : `<span>${escapeHtml(item.title.slice(0, 2).toUpperCase())}</span>`}</span>
+                    <span class="reader-option-copy"><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.category)} <span aria-hidden="true">·</span> PDF</small></span>
+                    ${item.id === book.id ? '<span class="reader-option-indicator" aria-hidden="true">●</span>' : ""}
+                </button>
+            `).join("")
+            : `<div class="reader-list-empty"><span aria-hidden="true">⌕</span><strong>Buku tidak ditemukan</strong><small>Coba kata kunci atau kategori lain.</small></div>`;
+
+        list.querySelectorAll("[data-book-id]").forEach(button => {
+            button.addEventListener("click", () => {
+                const nextId = button.dataset.bookId;
+                if (!nextId || nextId === book.id) return;
+                history.pushState({}, "", `baca-buku.html?id=${encodeURIComponent(nextId)}${categorySelect.value !== "Semua" ? `&kategori=${encodeURIComponent(categorySelect.value)}` : ""}`);
+                renderReaderPage();
+            });
+        });
+    };
+
+    search.addEventListener("input", renderLibraryList);
+    categorySelect.addEventListener("change", renderLibraryList);
+    renderLibraryList();
+}
+
+let readerPopstateBound = false;
+if (!readerPopstateBound && document.body.dataset.page === "reader") {
+    window.addEventListener("popstate", renderReaderPage);
+    readerPopstateBound = true;
 }
 
 function escapeHtml(value) {
@@ -718,3 +1098,8 @@ const page = document.body.dataset.page;
 if (page === "catalog") renderCatalog();
 if (page === "category") renderCategoriesPage();
 if (page === "detail") renderDetailPage();
+if (page === "reader") renderReaderPage();
+if (page === "collection") {
+    renderCollectionPage();
+    document.addEventListener("favorites-changed", renderCollectionPage);
+}
