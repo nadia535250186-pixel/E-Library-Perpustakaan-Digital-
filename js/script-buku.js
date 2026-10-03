@@ -1,20 +1,19 @@
 const BOOKS = [
     {
-        id: "mikrobiologi-kedokteran-jawetz",
-        title: "Mikrobiologi Kedokteran Jawetz, Melnick, & Adelberg Edisi 23",
-        author: "Geo F. Brooks dkk.",
-        publisher: "McGraw-Hill / Lange",
-        year: 2007,
-        pages: "832 halaman",
-        language: "English",
+        id: "pengantar-mikrobiologi",
+        title: "Pengantar Mikrobiologi",
+        author: "Najmah",
+        publisher: "Universitas Imelda Medan",
+        year: 2024,
+        pages: "",
+        language: "Indonesia",
         category: "Kedokteran",
         format: "PDF",
-        theme: "Mikrobiologi Kedokteran",
-        isbn: "978-0-07-149608-0",
-        cover: "assets/images/covers/Mikrobiologi-Kedokteran.webp",
-        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/393954562-Mikrobiologi-Kedokteran-Jawetz.pdf",
-        source: "McGraw-Hill / Lange",
-        description: "Buku rujukan mikrobiologi kedokteran yang membahas dasar-dasar mikrobiologi, imunologi, bakteriologi, mikologi, parasitologi, serta mikrobiologi diagnostik dan korelasi klinis."
+        theme: "Mikrobiologi",
+        cover: "assets/images/covers/Pengantar-Mikrobiologi-v.jpg",
+        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/740966742-24-01-39-eBook-Pengantar-Mikrobiologi-v.pdf",
+        source: "Universitas Imelda Medan",
+        description: "Buku pengantar yang membahas klasifikasi dan fisiologi mikroba, sterilisasi, teknik isolasi bakteri, pertumbuhan mikroba, teknik laboratorium dan mikroskopi, infeksi virus, imunologi, flora normal, kualitas air, serta daya antibakteri antiseptik."
     },
     {
         id: "biokimia-harper-edisi-27",
@@ -34,23 +33,6 @@ const BOOKS = [
         description: "Membahas struktur dan fungsi protein serta enzim, bioenergetika dan metabolisme karbohidrat maupun lipid, metabolisme protein dan asam amino, makromolekul pembawa informasi, komunikasi sel, serta berbagai topik khusus biokimia."
     },
     {
-        id: "pengantar-mikrobiologi",
-        title: "Pengantar Mikrobiologi",
-        author: "Najmah",
-        publisher: "Universitas Imelda Medan",
-        year: 2024,
-        pages: "",
-        language: "Indonesia",
-        category: "Kedokteran",
-        format: "PDF",
-        theme: "Mikrobiologi",
-        cover: "assets/images/covers/Pengantar-Mikrobiologi-v.jpg",
-        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/740966742-24-01-39-eBook-Pengantar-Mikrobiologi-v.pdf",
-        source: "Universitas Imelda Medan",
-        description: "Buku pengantar yang membahas klasifikasi dan fisiologi mikroba, sterilisasi, teknik isolasi bakteri, pertumbuhan mikroba, teknik laboratorium dan mikroskopi, infeksi virus, imunologi, flora normal, kualitas air, serta daya antibakteri antiseptik."
-    },
-    
-    {
         id: "contemporary-dental-pharmacology",
         title: "Contemporary Dental Pharmacology: Evidence-Based Considerations Second Edition",
         author: "Arthur H. Jeske (editor)",
@@ -67,11 +49,8 @@ const BOOKS = [
         source: "Springer Nature",
         sourceLink: "https://link.springer.com/book/10.1007/978-3-031-53954-1",
         doi: "10.1007/978-3-031-53954-1",
-
-    description:
-        "Panduan farmakologi kedokteran gigi berbasis bukti yang membahas anestetik lokal, analgesik, antibiotik, sedatif, obat sistemik yang relevan dalam kedokteran gigi, penanganan keadaan darurat, dan rekomendasi klinis berbasis bukti."
-   },
-
+        description: "Panduan farmakologi kedokteran gigi berbasis bukti yang membahas anestetik lokal, analgesik, antibiotik, sedatif, obat sistemik yang relevan dalam kedokteran gigi, penanganan keadaan darurat, dan rekomendasi klinis berbasis bukti."
+    },
     {
         id: "psikologi-lintas-budaya",
         title: "Psikologi Lintas Budaya: Fenomena Perilaku Masyarakat dalam Konteks Lokalitas",
@@ -156,7 +135,6 @@ const BOOKS = [
         license: "CC BY-NC-SA 3.0",
         description: "Buku teks psikologi perkembangan yang membahas perubahan dan kesinambungan manusia sepanjang kehidupan, mulai dari proses fisik dan psikofisiologis hingga kognisi, bahasa, perkembangan psikososial, keluarga, teman sebaya, masa dewasa, dan penuaan."
     },
-
     {
         id: "buku-ajar-keperawatan-gigi-farmakologi",
         title: "Buku Ajar Keperawatan Gigi: Farmakologi",
@@ -242,7 +220,6 @@ const BOOKS = [
         source: "RISTEKDIKTI",
         description: "Pedoman mengenai penerapan Sistem Penjaminan Mutu Internal, termasuk prinsip, mekanisme, siklus, pelaksanaan, evaluasi, pengendalian, dan peningkatan mutu internal pada perguruan tinggi."
     },
-
     {
         id: "the-fate-of-the-tearling",
         title: "The Fate of the Tearling",
@@ -273,7 +250,7 @@ const BOOKS = [
         theme: "Romance",
         isbn: "978-979-22-8632-8",
         cover: "assets/images/covers/Des(c)ision.jpg",
-        pdf: null,
+        pdf: "assets/pdfs/Novel/Des(c)ision by Almira Raharjani.pdf",
         source: "Gramedia Pustaka Utama",
         sourceLink: "https://www.goodreads.com/book/show/15733557-des-c-ision",
         description: "Desi memutuskan hubungan dengan De karena merasa hubungan mereka hambar. Setelah berpisah, ia justru dihantui rasa kehilangan, masalah persahabatan, urusan kuliah, dan perasaan yang belum selesai."
@@ -421,162 +398,6 @@ const BOOKS = [
         source: "Square Enix Manga",
         sourceLink: "https://books.google.com/books/about/The_Apothecary_Diaries_01_Manga.html?id=7rGQEAAAQBAJ",
         description: "Maomao, gadis yang terlatih dalam pengobatan herbal, dipaksa bekerja sebagai pelayan di istana kekaisaran. Setelah membantu memecahkan misteri penyakit para pewaris takhta, ia dipromosikan dan terlibat dalam berbagai kasus serta intrik istana."
-    },
-    {
-        id: "laskar-pelangi",
-        title: "Laskar Pelangi",
-        author: "Andrea Hirata",
-        publisher: "Bentang Pustaka",
-        year: 2005,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/laskar-pelangi.pdf",
-        description: "Kisah sepuluh anak dari keluarga sederhana yang berjuang mendapatkan pendidikan di Belitong.",
-        cover: "assets/images/covers/laskar-pelangi.jpg"
-    },
-    {
-        id: "pada-senja-yang-membawamu-pergi",
-        title: "Pada Senja yang Membawamu Pergi",
-        author: "Boy Candra",
-        publisher: "Gagas Media",
-        year: 2016,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/pada-senja-yang-membawamu-pergi.pdf",
-        description: "Kisah tentang cinta, harapan, dan kenangan yang kembali hadir sebagai alasan untuk terus melangkah.",
-        cover: "assets/images/covers/pada-senja-yang-membawamu-pergi.jpg"
-    },
-    {
-        id: "negeri-lima-menara",
-        title: "Negeri 5 Menara",
-        author: "Ahmad Fuadi",
-        publisher: "Gramedia",
-        year: 2009,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/negeri-lima-menara.pdf",
-        description: "Perjalanan Alif Fikri dan sahabat-sahabatnya di Pondok Madani, ditemani semangat untuk meraih cita-cita.",
-        cover: "assets/images/covers/negeri-5-menara.jpg"
-    },
-    {
-        id: "matahari",
-        title: "Matahari",
-        author: "Tere Liye",
-        publisher: "Gramedia Pustaka Utama",
-        year: 2016,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/matahari.pdf",
-        description: "Petualangan Raib, Seli, dan Ali berlanjut saat mereka menghadapi tantangan baru di dunia paralel.",
-        cover: "assets/images/covers/matahari.jpg"
-    },
-    {
-        id: "tenggelamnya-kapal-van-der-wijck",
-        title: "Tenggelamnya Kapal Van der Wijck",
-        author: "Haji Abdul Malik Karim Amrullah",
-        publisher: "Gema Insani",
-        year: 1938,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/tenggelamnya-kapal-van-der-wijck.pdf",
-        description: "Kisah cinta yang terhalang adat dan perbedaan latar sosial di Minangkabau.",
-        cover: "assets/images/covers/tenggelamnya-kapal-van-der-wijck.jpg"
-    },
-    {
-        id: "bumi-cinta",
-        title: "Bumi Cinta",
-        author: "Habiburrahman El-Shirazy",
-        publisher: "Republika",
-        year: 2019,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/bumi-cinta.pdf",
-        description: "Perjalanan seorang mahasiswa Indonesia yang berusaha menjaga prinsip hidup selama menempuh studi di luar negeri.",
-        cover: "assets/images/covers/bumi-cinta.jpg"
-    },
-    {
-        id: "sengsara-membawa-nikmat",
-        title: "Sengsara Membawa Nikmat",
-        author: "Sutan Sati",
-        publisher: "Balai Pustaka",
-        year: 1929,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/sengsara-membawa-nikmat.pdf",
-        description: "Pengembaraan Midun dalam kisah klasik yang melintasi Sumatra hingga Jawa.",
-        cover: "assets/images/covers/sengsara-membawa-nikmat.jpg"
-    },
-    {
-        id: "the-seven-spirits-of-god",
-        title: "The Seven Spirits of God",
-        author: "Ron Auch",
-        publisher: "New Leaf Press",
-        year: 1993,
-        language: "English",
-        category: "Spiritualitas",
-        format: "PDF",
-        pdf: "buku/the-seven-spirits-of-god.pdf",
-        description: "Pembahasan mengenai tujuh roh Allah dalam ajaran Alkitab dan kaitannya dengan kehidupan rohani.",
-        cover: "assets/images/covers/the-spirits-of-god.jpg"
-    },
-    {
-        id: "dunia-sophie-sebuah-novel-filsafat",
-        title: "Dunia Sophie: Sebuah Novel Filsafat",
-        author: "Jostein Gaarder",
-        publisher: "Mizan",
-        year: 2020,
-        language: "Indonesia",
-        category: "Filsafat",
-        format: "PDF",
-        pdf: "buku/dunia-sophie-sebuah-novel-filsafat.pdf",
-        description: "Sophie menerima pertanyaan-pertanyaan misterius yang mengantarnya mengenal sejarah dan pemikiran filsafat.",
-        cover: "assets/images/covers/dunia-sophie-sebuah-novel-filsafat.jpg"
-    },
-    {
-        id: "dalam-mihrab-cinta",
-        title: "Dalam Mihrab Cinta",
-        author: "Habiburrahman El Shirazy",
-        publisher: "Republika",
-        year: 2020,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/dalam-mihrab-cinta.pdf",
-        description: "Kisah tentang ketegaran, ketulusan, dan perjalanan cinta yang tumbuh di jalan Allah.",
-        cover: "assets/images/covers/dalam-mihrab-cinta.jpg"
-    },
-    {
-        id: "royan-revolusi",
-        title: "Royan Revolusi",
-        author: "Ramadhan K.H.",
-        publisher: "Gunung Agung",
-        year: 1970,
-        language: "Indonesia",
-        category: "Novel",
-        format: "PDF",
-        pdf: "buku/royan-revolusi.pdf",
-        description: "Idrus berusaha mempertahankan nuraninya ketika kembali ke desa yang dipenuhi manipulasi dan perebutan kepentingan.",
-        cover: "assets/images/covers/royan-revolusi.jpg"
-    },
-    {
-        id: "di-atas-sajadah-cinta",
-        title: "Di Atas Sajadah Cinta",
-        author: "Habiburrahman El Shirazy",
-        publisher: "Republika",
-        year: 2006,
-        language: "Indonesia",
-        category: "Spiritualitas",
-        format: "PDF",
-        pdf: "buku/di atas-sajadah-cinta.pdf",
-        description: "Kumpulan kisah teladan Islami yang menguatkan iman dan menenteramkan hati.",
-        cover: "assets/images/covers/di atas-sajadah-cinta.jpg"
     }
 ];
 
@@ -585,7 +406,7 @@ const COLLECTIONS = {
         title: "Buku Populer",
         eyebrow: "BANYAK DICARI",
         description: "Pilihan bacaan yang sering menjadi teman pembaca.",
-        ids: ["laskar-pelangi", "ayah-andrea-hirata", "pada-senja-yang-membawamu-pergi", "senja-hujan-cerita", "negeri-lima-menara"]
+        ids: ["ayah-andrea-hirata", "senja-hujan-cerita", "yang-fana-adalah-waktu", "descision", "death-note-l-change-the-world"]
     },
     latest: {
         title: "Buku Terbaru",
@@ -630,6 +451,7 @@ function getBook(id) {
 }
 
 function encodeAssetPath(path) {
+    if (!path) return "";
     return String(path).split("/").map(part => encodeURIComponent(part)).join("/");
 }
 
@@ -942,7 +764,7 @@ function renderReaderPage() {
 
     const availableBooks = BOOKS.filter(book => book.pdf);
     const params = new URLSearchParams(window.location.search);
-    const requestedId = params.get("id") || "biokimia-harper-edisi-27";
+    const requestedId = params.get("id") || "pengantar-mikrobiologi";
     const book = getBook(requestedId);
     const readerCount = document.getElementById("readerCount");
 
@@ -1081,7 +903,7 @@ if (!readerPopstateBound && document.body.dataset.page === "reader") {
 }
 
 function escapeHtml(value) {
-    return String(value).replace(/[&<>'"]/g, char => ({
+    return String(value || "").replace(/[&<>'"]/g, char => ({
         "&": "&amp;",
         "<": "&lt;",
         ">": "&gt;",
