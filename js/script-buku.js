@@ -425,13 +425,28 @@ const BOOKS = [
 ];
 
 const STORAGE_KEY = "lafa-elibrary-favorites";
-let favorites = [];
-try {
-    const storedFavorites = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    favorites = Array.isArray(storedFavorites) ? storedFavorites : [];
-} catch {
-    favorites = [];
+const HISTORY_KEY = "lafa-elibrary-reading-history";
+
+function readStoredIds(key) {
+    try {
+        const value = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(value) ? value.filter(id => typeof id === "string") : [];
+    } catch {
+        return [];
+    }
 }
+
+function writeStoredIds(key, ids) {
+    try {
+        localStorage.setItem(key, JSON.stringify(ids));
+        return true;
+    } catch {
+        showToast("Browser tidak dapat menyimpan perubahan. Periksa pengaturan penyimpanan.");
+        return false;
+    }
+}
+
+let favorites = [...new Set(readStoredIds(STORAGE_KEY))];
 
 function getBook(id) {
     return BOOKS.find(book => book.id === id);
@@ -442,7 +457,24 @@ function isFavorite(id) {
 }
 
 function saveFavorites() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    writeStoredIds(STORAGE_KEY, favorites);
+}
+
+function getHistoryIds() {
+    return [...new Set(readStoredIds(HISTORY_KEY))].filter(id => getBook(id));
+}
+
+function recordRead(id) {
+    if (!getBook(id)) return;
+    const historyIds = getHistoryIds().filter(savedId => savedId !== id);
+    historyIds.unshift(id);
+    writeStoredIds(HISTORY_KEY, historyIds.slice(0, 50));
+    document.dispatchEvent(new CustomEvent("history-changed"));
+}
+
+function clearReadHistory() {
+    writeStoredIds(HISTORY_KEY, []);
+    document.dispatchEvent(new CustomEvent("history-changed"));
 }
 
 function toggleFavorite(id) {
@@ -624,7 +656,7 @@ function createReadActions(book, saved) {
     const buttons = [];
 
     if (book.pdf) {
-        buttons.push(`<a class="button button-dark" href="${escapeAttribute(book.pdf)}" target="_blank" rel="noopener">📖 Baca PDF</a>`);
+        buttons.push(`<a class="button button-dark" href="baca-buku.html?id=${encodeURIComponent(book.id)}">📖 Baca Buku</a>`);
         buttons.push(`<a class="button button-accent" href="${escapeAttribute(book.pdf)}" download>⬇ Unduh PDF</a>`);
     } else if (book.sourceLink) {
         buttons.push(`<a class="button button-dark" href="${escapeAttribute(book.sourceLink)}" target="_blank" rel="noopener">🔗 Lihat Sumber</a>`);
@@ -698,6 +730,156 @@ function renderDetailPage() {
 
     const favoriteButton = document.getElementById("favoriteButton");
     favoriteButton?.addEventListener("click", () => toggleFavorite(book.id));
+    document.addEventListener("favorites-changed", () => {
+        const isSaved = isFavorite(book.id);
+        favoriteButton?.classList.toggle("saved", isSaved);
+        if (favoriteButton) favoriteButton.textContent = isSaved ? "♥ Sudah Disimpan" : "♡ Simpan ke Favorit";
+    });
+}
+
+function renderReaderPage() {
+    const wrapper = document.getElementById("readerContent");
+    if (!wrapper) return;
+
+    const availableBooks = BOOKS.filter(book => book.pdf);
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("id") || "biokimia-harper-edisi-27";
+    const book = getBook(requestedId);
+    const readerCount = document.getElementById("readerCount");
+
+    if (readerCount) readerCount.textContent = String(availableBooks.length).padStart(2, "0");
+
+    if (!book) {
+        document.title = "Buku Tidak Ditemukan | LAFENADHER E-Library";
+        wrapper.innerHTML = `
+            <div class="reader-empty error-message">
+                <span class="reader-empty-mark" aria-hidden="true">L</span>
+                <h2>Buku tidak ditemukan</h2>
+                <p>Pilih buku dari rak atau kembali ke katalog untuk menemukan bacaan.</p>
+                <a class="button button-dark" href="katalog-buku.html">Kembali ke Katalog</a>
+            </div>
+        `;
+        return;
+    }
+
+    document.title = `Baca ${book.title} | LAFENADHER E-Library`;
+    if (book.pdf) recordRead(book.id);
+
+    const encodeAssetPath = path => path.split("/").map(part => encodeURIComponent(part)).join("/");
+    const pdfUrl = book.pdf ? encodeAssetPath(book.pdf) : "";
+    const categories = [...new Set(availableBooks.map(item => item.category))];
+    const selectedCategory = params.get("kategori") || "Semua";
+    const viewerContent = book.pdf
+        ? `
+            <div class="pdf-container">
+                <iframe src="${escapeAttribute(pdfUrl)}#toolbar=1&navpanes=0&view=FitH" title="Pembaca PDF: ${escapeHtml(book.title)}"></iframe>
+            </div>
+            <div class="reader-pdf-fallback">
+                <span class="reader-pdf-note"><span class="reader-pdf-dot" aria-hidden="true"></span> File PDF lokal siap dibaca</span>
+                <a class="reader-open-link" href="${escapeAttribute(pdfUrl)}" target="_blank" rel="noopener noreferrer">Buka di tab baru <span aria-hidden="true">↗</span></a>
+            </div>
+        `
+        : `
+            <div class="reader-empty error-message">
+                <span class="reader-empty-mark" aria-hidden="true">PDF</span>
+                <h2>PDF belum tersedia</h2>
+                <p>Buku ini belum memiliki berkas PDF di perpustakaan.</p>
+                ${book.sourceLink ? `<a class="button button-dark" href="${escapeAttribute(book.sourceLink)}" target="_blank" rel="noopener noreferrer">Buka sumber buku</a>` : ""}
+            </div>
+        `;
+
+    wrapper.innerHTML = `
+        <div class="reader-workspace">
+            <aside class="reader-library" aria-label="Rak buku PDF">
+                <div class="reader-library-heading">
+                    <div>
+                        <span class="reader-kicker">KOLEKSI</span>
+                        <h2>Rak bacaan</h2>
+                    </div>
+                    <span class="reader-library-count">${availableBooks.length} buku</span>
+                </div>
+                <label class="reader-search">
+                    <span class="reader-search-icon" aria-hidden="true">⌕</span>
+                    <span class="sr-only">Cari buku</span>
+                    <input id="readerSearch" type="search" placeholder="Cari judul atau penulis" autocomplete="off">
+                    <kbd>/</kbd>
+                </label>
+                <label class="reader-category-label" for="readerCategory">Jelajahi kategori</label>
+                <select id="readerCategory" class="reader-category-select" aria-label="Filter kategori buku">
+                    <option value="Semua">Semua kategori</option>
+                    ${categories.map(category => `<option value="${escapeAttribute(category)}"${category === selectedCategory ? " selected" : ""}>${escapeHtml(category)}</option>`).join("")}
+                </select>
+                <div class="reader-list-caption"><span>SEMUA BUKU</span><span id="readerResultCount">${availableBooks.length}</span></div>
+                <div class="reader-library-list" id="readerLibraryList" role="list"></div>
+                <a class="reader-library-footer" href="katalog-buku.html"><span aria-hidden="true">＋</span> Temukan buku lain</a>
+            </aside>
+
+            <section class="reader-main" aria-label="Pembaca buku">
+                <div class="reader-book-heading">
+                    <div class="reader-book-heading-copy">
+                        <a class="reader-back-link" href="detail-buku.html?id=${encodeURIComponent(book.id)}"><span aria-hidden="true">←</span> Detail buku</a>
+                        <div class="reader-title-line">
+                            <h1>${escapeHtml(book.title)}</h1>
+                            ${book.pdf ? '<span class="reader-format">PDF</span>' : '<span class="reader-format is-unavailable">BELUM ADA PDF</span>'}
+                        </div>
+                        <p class="reader-meta">${escapeHtml(book.author)} <span aria-hidden="true">·</span> ${escapeHtml(book.category)}${book.year ? ` <span aria-hidden="true">·</span> ${escapeHtml(String(book.year))}` : ""}</p>
+                    </div>
+                    <div class="reader-buttons">
+                        <a class="reader-detail-button" href="detail-buku.html?id=${encodeURIComponent(book.id)}">Info buku</a>
+                        ${book.pdf ? `<a class="reader-download-button" href="${escapeAttribute(pdfUrl)}" download><span aria-hidden="true">↓</span> Unduh PDF</a>` : ""}
+                    </div>
+                </div>
+                <section class="reader-book" aria-label="Berkas buku ${escapeHtml(book.title)}">
+                    ${viewerContent}
+                </section>
+                <p class="reader-privacy-note"><span aria-hidden="true">✦</span> Ruang baca pribadi · Koleksi tersimpan di perpustakaan ini</p>
+            </section>
+        </div>
+    `;
+
+    const list = document.getElementById("readerLibraryList");
+    const search = document.getElementById("readerSearch");
+    const categorySelect = document.getElementById("readerCategory");
+    const resultCount = document.getElementById("readerResultCount");
+
+    const renderLibraryList = () => {
+        const keyword = search.value.trim().toLowerCase();
+        const category = categorySelect.value;
+        const filtered = availableBooks.filter(item => {
+            const text = `${item.title} ${item.author} ${item.category}`.toLowerCase();
+            return text.includes(keyword) && (category === "Semua" || item.category === category);
+        });
+
+        resultCount.textContent = String(filtered.length).padStart(2, "0");
+        list.innerHTML = filtered.length
+            ? filtered.map(item => `
+                <button class="reader-book-option${item.id === book.id ? " is-active" : ""}" type="button" role="listitem" data-book-id="${escapeAttribute(item.id)}" aria-current="${item.id === book.id ? "true" : "false"}">
+                    <span class="reader-thumb">${item.cover ? `<img src="${escapeAttribute(encodeAssetPath(item.cover))}" alt="" loading="lazy">` : `<span>${escapeHtml(item.title.slice(0, 2).toUpperCase())}</span>`}</span>
+                    <span class="reader-option-copy"><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.category)} <span aria-hidden="true">·</span> PDF</small></span>
+                    ${item.id === book.id ? '<span class="reader-option-indicator" aria-hidden="true">●</span>' : ""}
+                </button>
+            `).join("")
+            : `<div class="reader-list-empty"><span aria-hidden="true">⌕</span><strong>Buku tidak ditemukan</strong><small>Coba kata kunci atau kategori lain.</small></div>`;
+
+        list.querySelectorAll("[data-book-id]").forEach(button => {
+            button.addEventListener("click", () => {
+                const nextId = button.dataset.bookId;
+                if (!nextId || nextId === book.id) return;
+                history.pushState({}, "", `baca-buku.html?id=${encodeURIComponent(nextId)}${categorySelect.value !== "Semua" ? `&kategori=${encodeURIComponent(categorySelect.value)}` : ""}`);
+                renderReaderPage();
+            });
+        });
+    };
+
+    search.addEventListener("input", renderLibraryList);
+    categorySelect.addEventListener("change", renderLibraryList);
+    renderLibraryList();
+}
+
+let readerPopstateBound = false;
+if (!readerPopstateBound && document.body.dataset.page === "reader") {
+    window.addEventListener("popstate", renderReaderPage);
+    readerPopstateBound = true;
 }
 
 function escapeHtml(value) {
@@ -718,3 +900,4 @@ const page = document.body.dataset.page;
 if (page === "catalog") renderCatalog();
 if (page === "category") renderCategoriesPage();
 if (page === "detail") renderDetailPage();
+if (page === "reader") renderReaderPage();

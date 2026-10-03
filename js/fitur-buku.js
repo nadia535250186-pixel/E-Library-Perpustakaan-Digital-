@@ -64,11 +64,7 @@ function createFavoriteCard(book) {
             href="detail-buku.html?id=${encodeURIComponent(book.id)}"
         >
 
-            <img
-                src="${book.cover}"
-                alt="Cover ${escapeHtml(book.title)}"
-                loading="lazy"
-            >
+            ${getCoverMarkup(book, false)}
 
         </a>
 
@@ -102,7 +98,7 @@ function createFavoriteCard(book) {
                 <button
                     class="button button-accent"
                     type="button"
-                    data-favorite-id="${book.id}"
+                    data-favorite-id="${escapeAttribute(book.id)}"
                 >
                     ♥ Hapus Favorit
                 </button>
@@ -184,6 +180,43 @@ function renderFavoritePage() {
 }
 
 
+function createHistoryCard(book) {
+    const card = document.createElement("article");
+    card.className = "book-card history-card";
+    card.innerHTML = `
+        <a class="book-cover" href="baca-buku.html?id=${encodeURIComponent(book.id)}" aria-label="Lanjutkan membaca ${escapeHtml(book.title)}">
+            ${getCoverMarkup(book, false)}
+        </a>
+        <div class="book-body">
+            <span class="book-category">${escapeHtml(book.category)}</span>
+            <h3 class="book-title">${escapeHtml(book.title)}</h3>
+            <p class="book-author">${escapeHtml(book.author)}</p>
+            <div class="card-actions">
+                <a class="button button-dark" href="baca-buku.html?id=${encodeURIComponent(book.id)}">Lanjutkan Baca</a>
+                <a class="button button-outline" href="detail-buku.html?id=${encodeURIComponent(book.id)}">Detail</a>
+            </div>
+        </div>
+    `;
+    return card;
+}
+
+
+function renderHistoryPage() {
+    const grid = document.getElementById("historyGrid");
+    const empty = document.getElementById("historyEmpty");
+    const count = document.getElementById("historyCount");
+    const clearButton = document.getElementById("clearHistory");
+    if (!grid || !empty || !count) return;
+
+    const books = getHistoryIds().map(id => getBook(id)).filter(Boolean);
+    grid.replaceChildren();
+    count.textContent = `${books.length} buku terakhir dibuka`;
+    empty.hidden = books.length > 0;
+    if (clearButton) clearButton.hidden = books.length === 0;
+    books.forEach(book => grid.appendChild(createHistoryCard(book)));
+}
+
+
 /* =========================================
    UPDATE SAAT FAVORIT BERUBAH
    ========================================= */
@@ -216,4 +249,15 @@ if (
 
     renderFavoritePage();
 
+}
+
+
+const clearHistoryButton = document.getElementById("clearHistory");
+if (clearHistoryButton) {
+    clearHistoryButton.addEventListener("click", clearReadHistory);
+}
+
+if (document.body.dataset.page === "history") {
+    renderHistoryPage();
+    document.addEventListener("history-changed", renderHistoryPage);
 }
