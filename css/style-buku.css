@@ -234,6 +234,23 @@ button, input { font: inherit; }
 .toast { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; padding: 12px 17px; border-radius: 9px; background: #222; color: #fff; transition: .25s; z-index: 200; font-size: 13px; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
+
+/* ===== Cover + synopsis overlay ===== */
+.book-cover { position: relative; isolation: isolate; }
+.book-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,16,13,.92), rgba(20,16,13,.10) 68%, transparent); opacity: 0; transition: opacity .22s ease; pointer-events: none; z-index: 1; }
+.cover-synopsis { position: absolute; inset: auto 0 0; z-index: 2; padding: 16px; color: #fff; transform: translateY(12px); opacity: 0; transition: opacity .22s ease, transform .22s ease; }
+.cover-synopsis span { display: inline-block; margin-bottom: 7px; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.cover-synopsis p { margin: 0; color: #fff; font-size: 12px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.cover-synopsis small { display: block; margin-top: 9px; color: rgba(255,255,255,.78); font-size: 10px; }
+.book-cover:hover::after, .book-cover:focus-visible::after { opacity: 1; }
+.book-cover:hover .cover-synopsis, .book-cover:focus-visible .cover-synopsis { opacity: 1; transform: translateY(0); }
+.cover-fallback[hidden] { display: none; }
+.cover-fallback { width: 100%; height: 100%; min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; background: linear-gradient(145deg, #e9e1d7, #cfc4b6); color: #4b423a; }
+.cover-fallback strong { font: 700 46px/1 Georgia, serif; letter-spacing: .04em; }
+.cover-fallback span { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
+.detail-cover .cover-fallback { aspect-ratio: 3 / 4.25; min-height: 420px; }
+.detail-cover-missing { box-shadow: var(--shadow); }
+
 @media (max-width: 1050px) {
     .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .book-cover { height: 230px; flex-basis: 230px; }
