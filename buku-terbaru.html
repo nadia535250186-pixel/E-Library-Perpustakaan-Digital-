@@ -3,72 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> E-Library </title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="description" content="Jelajahi koleksi terbaru LAFENADHER E-Library.">
+    <title>Buku Terbaru | LAFENADHER E-Library</title>
+    <link rel="stylesheet" href="css/style-buku.css">
+    <link rel="stylesheet" href="css/theme-brown.css">
 </head>
-<body>
-    <header class="header">
-        <a href="#home" class="logo">E-Library</a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-           <a href="buku-terbaru.html">Buku Terbaru</a>
-           <a href="buku-rekomendasi.html">Buku Rekomendasi</a>
-           <a href="buku-populer.html">Buku Populer</a>
-        </nav>
+<body data-page="collection" data-collection="latest">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="home.html" aria-label="LAFENADHER E-Library">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span><strong>LAFENADHER</strong><small>E-Library</small></span>
+            </a>
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a href="home.html">Beranda</a>
+                <a href="katalog-buku.html">Katalog</a>
+                <a href="kategori-buku.html">Kategori</a>
+                <a href="favorit-buku.html">Favorit</a>
+                <a href="riwayat-baca.html">Riwayat</a>
+            </nav>
+        </div>
     </header>
-    <h1>Buku Terbaru</h1>
-      <p>Daftar buku terbaru di E-Library</p>
-    <div class="book-card">
-        <h2>Yang Fana adalah Waktu</h2>
-        <p>Penulis: Sapardi Djoko Damono</p>
-        <p>Penerbit: Gramedia Pustaka Utama</p>
-        <p>Tahun terbit: 2022</p>
-        <p>Bahasa: Indonesia</p>
-        <p>Deskripsi singkat: Mengisahkan perjalanan hubungan manusia, cinta, dan waktu. Ceritanya menggambarkan bagaimana perasaan dan kenangan dapat berubah seiring berjalannya waktu, serta bagaimana manusia menghadapi perubahan dalam kehidupannya.</p>
-        <a href="buku/yang-fana-adalah-waktu.pdf" target="_blank">Baca Buku
-        </a>
-    </div>
-    <div class="book-card">
-        <h2>Dunia Sophie: Sebuah Novel Filsafat</h2>
-        <p>Penulis: Jostein Gaarder</p>
-        <p>Penerbit: Mizan</p>
-        <p>Tahun terbit: 2020</p>
-        <p>Bahasa: Indonesia</p>
-        <p>Deskripsi singkat: Menceritakan Sophie, seorang gadis yang mulai menerima pertanyaan-pertanyaan filosofis misterius. Dari pertanyaan tersebut, Sophie diajak mengenal berbagai pemikiran dan sejarah filsafat sambil mencari pemahaman tentang kehidupan, manusia, dan dunia di sekitarnya.</p>
-        <a href="buku/dunia-sophie-sebuah-novel-filsafat.pdf" target="_blank">Baca Buku
-        </a>
-    </div>
-    <div class="book-card">
-        <h2>Dalam Mihrab Cinta</h2>
-        <p>Penulis: Habiburrahman El Shirazy</p>
-        <p>Penerbit: Republika</p>
-        <p>Tahun terbit: 2020</p>
-        <p>Bahasa: Indonesia</p>
-        <p>Deskripsi singkat: Mendeskripsikan mengenai takbir cinta zahrana. Dalam novelet yang sebagian isinya saya angkat dari kisah nyata ini saya mencoba menulis tentang indahnya ketegaran dan ketulusan di jalan Allah.</p>
-        <a href="buku/dalam-mihrab-cinta.pdf" target="_blank">Baca Buku
-        </a>
-    </div>
-    <div class="book-card">
-        <h2>Royan Revolusi</h2>
-        <p>Penulis: Ramadhan K.H</p>
-        <p>Penerbit: Gunung Agung</p>
-        <p>Tahun terbit: 1970</p>
-        <p>Bahasa: Indonesia</p>
-        <p>Deskripsi singkat: Menceritakan Idrus, seorang tokoh revolusi yang berusaha mempertahankan hati nuraninya di tengah lingkungan yang dipenuhi manipulasi, korupsi, dan keserakahan. Setelah kembali dari luar negeri ke desa, Idrus harus menghadapi orang-orang yang berusaha memanfaatkan masyarakat demi kekayaan dan kepentingan politik.</p>
-        <a href="buku/royan-revolusi.pdf" target="_blank">Baca Buku
-        </a>
-    </div>
-    <div class="book-card">
-        <h2>Di atas Sajadah Cinta</h2>
-        <p>Penulis: Habiburahman El Shirazy</p>
-        <p>Penerbit: Republika</p>
-        <p>Tahun terbit: 2006</p>
-        <p>Bahasa: Indonesia</p>
-        <p>Deskripsi singkat: Menceritakan tentang kisah-Kisah teladan Islami, meneguhkan iman dan menentramkan jiwa.</p>
-        <a href="buku/di atas-sajadah-cinta.pdf" target="_blank">Baca Buku
-        </a>
-    </div>
+    <main>
+        <section class="page-banner collection-banner">
+            <div class="container">
+                <span class="eyebrow eyebrow-dark" id="collectionEyebrow"></span>
+                <h1 id="collectionTitle"></h1>
+                <p id="collectionDescription"></p>
+                <span class="collection-count" id="collectionCount"></span>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading split">
+                    <div><h2>Baru di rak</h2><p>Koleksi diurutkan menurut tahun terbit, dari yang paling baru.</p></div>
+                    <a class="button button-outline" href="baca-buku.html">Masuk ke Ruang Baca <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="book-grid" id="collectionGrid"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner"><div><strong>LAFENADHER E-Library</strong><p>Perpustakaan digital untuk membaca dan menemukan buku.</p></div><a href="katalog-buku.html">Lihat semua koleksi ↗</a></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/script-buku.js"></script>
 </body>
 </html>

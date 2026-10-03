@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | LAFENADHER E-Library</title>
     <link rel="stylesheet" href="css/style-home.css">
+    <link rel="stylesheet" href="css/theme-brown.css">
 </head>
 <body>
 
@@ -27,9 +28,11 @@
                 <a class="active" href="home.html">Home</a>
                 <a href="katalog-buku.html">Katalog</a>
                 <a href="kategori-buku.html">Kategori</a>
+                <a href="favorit-buku.html">Favorit</a>
+                <a href="riwayat-baca.html">Riwayat</a>
 
                 <div class="menu-dropdown">
-                    <button class="menu-button" type="button">☰</button>
+                    <button class="menu-button" type="button" aria-label="Buka menu informasi" aria-expanded="false">☰</button>
 
                     <div class="dropdown-content">
                         <a href="about.html">About</a>
@@ -82,7 +85,53 @@
             </div>
 
         </section>
+
+        <section class="home-collections section">
+            <div class="container">
+                <div class="section-heading split">
+                    <div>
+                        <span class="eyebrow eyebrow-dark">RUANG BACA DIGITAL</span>
+                        <h2>Temukan rak yang cocok untukmu.</h2>
+                        <p>Dari koleksi terbaru sampai pilihan pembaca, semuanya terhubung ke detail buku dan PDF.</p>
+                    </div>
+                    <a class="button button-dark" href="katalog-buku.html">Buka katalog lengkap <span aria-hidden="true">↗</span></a>
+                </div>
+
+                <div class="home-collection-grid">
+                    <a class="home-collection-card home-collection-latest" href="buku-terbaru.html">
+                        <img src="assets/images/cover-halaman2.png" alt="" loading="lazy">
+                        <span class="home-collection-index">01 / RAK TERBARU</span>
+                        <span class="home-collection-copy"><strong>Temukan yang baru.</strong><small>Jelajahi buku berdasarkan tahun terbit.</small></span>
+                        <span class="home-collection-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="home-collection-card home-collection-popular" href="buku-populer.html">
+                        <img src="assets/images/cover-halaman.png" alt="" loading="lazy">
+                        <span class="home-collection-index">02 / PILIHAN PEMBACA</span>
+                        <span class="home-collection-copy"><strong>Baca yang disukai.</strong><small>Mulai dari judul pilihan pembaca.</small></span>
+                        <span class="home-collection-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="home-collection-card home-collection-recommended" href="buku-rekomendasi.html">
+                        <img src="assets/images/cover-halaman3.png" alt="" loading="lazy">
+                        <span class="home-collection-index">03 / PILIHAN EDITOR</span>
+                        <span class="home-collection-copy"><strong>Jelajahi cerita lain.</strong><small>Temukan bacaan lintas genre.</small></span>
+                        <span class="home-collection-arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <a class="home-reading-cta" href="baca-buku.html">
+                    <span><small>SUDAH TAHU YANG INGIN DIBACA?</small><strong>Masuk ke ruang baca PDF</strong></span>
+                    <span class="home-cta-arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div><strong>LAFENADHER E-Library</strong><p>Perpustakaan digital untuk membaca dan menemukan buku.</p></div>
+            <p>&copy; 2026 LAFENADHER E-Library</p>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 

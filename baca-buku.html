@@ -1,206 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baca koleksi PDF LAFENADHER E-Library langsung di halaman.">
     <title>Baca Buku | LAFENADHER E-Library</title>
-
-    <link
-        rel="stylesheet"
-        href="css/style-buku.css"
-    >
-
-    <style>
-
-        .reader {
-            padding: 30px 0 60px;
-        }
-
-        .reader-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .reader-header h1 {
-            margin: 0;
-        }
-
-        .reader-book {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .reader-info {
-            padding: 20px;
-        }
-
-        .reader-info h2 {
-            margin-top: 0;
-        }
-
-        .reader-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .pdf-container {
-            width: 100%;
-            height: 80vh;
-            min-height: 600px;
-            background: #eee;
-        }
-
-        .pdf-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .error-message {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        @media (max-width: 700px) {
-
-            .reader-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .pdf-container {
-                height: 70vh;
-                min-height: 500px;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="css/style-buku.css">
+    <link rel="stylesheet" href="css/theme-brown.css">
+    <link rel="stylesheet" href="css/reader.css">
 </head>
 
-
 <body data-page="reader">
-
-
-<header class="site-header">
-
-    <div class="container header-inner">
-
-        <a href="index.html" class="brand">
-
-            <span class="brand-mark">
-                L
-            </span>
-
-            <span>
-                <strong>LAFENADHER</strong>
-                <small>E-Library</small>
-            </span>
-
-        </a>
-
-
-        <nav class="main-nav">
-
-            <a href="index.html">
-                Katalog
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="katalog-buku.html" class="brand" aria-label="LAFENADHER E-Library">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span>
+                    <strong>LAFENADHER</strong>
+                    <small>E-Library</small>
+                </span>
             </a>
 
-            <a href="kategori-buku.html">
-                Kategori
-            </a>
-
-            <a href="favorit-buku.html">
-                Favorit
-            </a>
-
-            <a href="riwayat-baca.html">
-                Riwayat
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<main>
-
-    <section class="page-banner">
-
-        <div class="container">
-
-            <span class="eyebrow eyebrow-dark">
-                E-LIBRARY
-            </span>
-
-            <h1>Baca Buku</h1>
-
-            <p>
-                Baca buku secara langsung melalui
-                perpustakaan digital.
-            </p>
-
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a href="home.html">Home</a>
+                <a href="katalog-buku.html">Katalog</a>
+                <a href="kategori-buku.html">Kategori</a>
+                <a href="favorit-buku.html">Favorit</a>
+                <a href="riwayat-baca.html">Riwayat</a>
+            </nav>
         </div>
+    </header>
 
-    </section>
+    <main>
+        <section class="reader page-reader">
+            <div class="container">
+                <div class="reader-intro">
+                    <div class="reader-intro-copy">
+                        <span class="eyebrow eyebrow-dark">LAFENADHER DIGITAL LIBRARY</span>
+                        <h2>Satu ruang untuk cerita dan ilmu.</h2>
+                        <p>Pilih koleksi di rak, lalu nikmati bacaan langsung di sini.</p>
+                    </div>
+                    <div class="reader-intro-stat" aria-label="Jumlah buku PDF tersedia">
+                        <span id="readerCount">—</span>
+                        <small>PDF tersedia</small>
+                    </div>
+                </div>
+                <div id="readerContent" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
 
-
-    <section class="reader">
-
-        <div class="container">
-
-            <div id="readerContent"></div>
-
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>LAFENADHER E-Library</strong>
+                <p>Perpustakaan digital untuk membaca dan menemukan buku.</p>
+            </div>
+            <p>&copy; 2026 LAFENADHER E-Library</p>
         </div>
+    </footer>
 
-    </section>
-
-</main>
-
-
-<footer class="site-footer">
-
-    <div class="container footer-inner">
-
-        <div>
-
-            <strong>
-                LAFENADHER E-Library
-            </strong>
-
-            <p>
-                Perpustakaan digital untuk membaca
-                dan menemukan buku.
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<script src="js/script-buku.js"></script>
-<script src="js/fitur-buku.js"></script>
-
-
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/script-buku.js"></script>
 </body>
-
 </html>
