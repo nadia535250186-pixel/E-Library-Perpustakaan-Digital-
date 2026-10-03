@@ -431,9 +431,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/laskar-pelangi.pdf",
-        description: "Kisah sepuluh anak dari keluarga sederhana yang berjuang mendapatkan pendidikan di Belitong."
+        description: "Kisah sepuluh anak dari keluarga sederhana yang berjuang mendapatkan pendidikan di Belitong.",
+        cover: "assets/images/covers/laskar-pelangi.jpg"
     },
     {
         id: "pada-senja-yang-membawamu-pergi",
@@ -444,9 +444,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/pada-senja-yang-membawamu-pergi.pdf",
-        description: "Kisah tentang cinta, harapan, dan kenangan yang kembali hadir sebagai alasan untuk terus melangkah."
+        description: "Kisah tentang cinta, harapan, dan kenangan yang kembali hadir sebagai alasan untuk terus melangkah.",
+        cover: "assets/images/covers/pada-senja-yang-membawamu-pergi.jpg"
     },
     {
         id: "negeri-lima-menara",
@@ -457,9 +457,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/negeri-lima-menara.pdf",
-        description: "Perjalanan Alif Fikri dan sahabat-sahabatnya di Pondok Madani, ditemani semangat untuk meraih cita-cita."
+        description: "Perjalanan Alif Fikri dan sahabat-sahabatnya di Pondok Madani, ditemani semangat untuk meraih cita-cita.",
+        cover: "assets/images/covers/negeri-5-menara.jpg"
     },
     {
         id: "matahari",
@@ -470,9 +470,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/matahari.pdf",
-        description: "Petualangan Raib, Seli, dan Ali berlanjut saat mereka menghadapi tantangan baru di dunia paralel."
+        description: "Petualangan Raib, Seli, dan Ali berlanjut saat mereka menghadapi tantangan baru di dunia paralel.",
+        cover: "assets/images/covers/matahari.jpg"
     },
     {
         id: "tenggelamnya-kapal-van-der-wijck",
@@ -483,9 +483,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/tenggelamnya-kapal-van-der-wijck.pdf",
-        description: "Kisah cinta yang terhalang adat dan perbedaan latar sosial di Minangkabau."
+        description: "Kisah cinta yang terhalang adat dan perbedaan latar sosial di Minangkabau.",
+        cover: "assets/images/covers/tenggelamnya-kapal-van-der-wijck.jpg"
     },
     {
         id: "bumi-cinta",
@@ -496,9 +496,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/bumi-cinta.pdf",
-        description: "Perjalanan seorang mahasiswa Indonesia yang berusaha menjaga prinsip hidup selama menempuh studi di luar negeri."
+        description: "Perjalanan seorang mahasiswa Indonesia yang berusaha menjaga prinsip hidup selama menempuh studi di luar negeri.",
+        cover: "assets/images/covers/bumi-cinta.jpg"
     },
     {
         id: "sengsara-membawa-nikmat",
@@ -509,9 +509,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/sengsara-membawa-nikmat.pdf",
-        description: "Pengembaraan Midun dalam kisah klasik yang melintasi Sumatra hingga Jawa."
+        description: "Pengembaraan Midun dalam kisah klasik yang melintasi Sumatra hingga Jawa.",
+        cover: "assets/images/covers/sengsara-membawa-nikmat.jpg"
     },
     {
         id: "the-seven-spirits-of-god",
@@ -522,9 +522,9 @@ const BOOKS = [
         language: "English",
         category: "Spiritualitas",
         format: "PDF",
-        cover: null,
         pdf: "buku/the-seven-spirits-of-god.pdf",
-        description: "Pembahasan mengenai tujuh roh Allah dalam ajaran Alkitab dan kaitannya dengan kehidupan rohani."
+        description: "Pembahasan mengenai tujuh roh Allah dalam ajaran Alkitab dan kaitannya dengan kehidupan rohani.",
+        cover: "assets/images/covers/the-spirits-of-god.jpg"
     },
     {
         id: "dunia-sophie-sebuah-novel-filsafat",
@@ -535,9 +535,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Filsafat",
         format: "PDF",
-        cover: null,
         pdf: "buku/dunia-sophie-sebuah-novel-filsafat.pdf",
-        description: "Sophie menerima pertanyaan-pertanyaan misterius yang mengantarnya mengenal sejarah dan pemikiran filsafat."
+        description: "Sophie menerima pertanyaan-pertanyaan misterius yang mengantarnya mengenal sejarah dan pemikiran filsafat.",
+        cover: "assets/images/covers/dunia-sophie-sebuah-novel-filsafat.jpg"
     },
     {
         id: "dalam-mihrab-cinta",
@@ -548,9 +548,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/dalam-mihrab-cinta.pdf",
-        description: "Kisah tentang ketegaran, ketulusan, dan perjalanan cinta yang tumbuh di jalan Allah."
+        description: "Kisah tentang ketegaran, ketulusan, dan perjalanan cinta yang tumbuh di jalan Allah.",
+        cover: "assets/images/covers/dalam-mihrab-cinta.jpg"
     },
     {
         id: "royan-revolusi",
@@ -561,9 +561,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Novel",
         format: "PDF",
-        cover: null,
         pdf: "buku/royan-revolusi.pdf",
-        description: "Idrus berusaha mempertahankan nuraninya ketika kembali ke desa yang dipenuhi manipulasi dan perebutan kepentingan."
+        description: "Idrus berusaha mempertahankan nuraninya ketika kembali ke desa yang dipenuhi manipulasi dan perebutan kepentingan.",
+        cover: "assets/images/covers/royan-revolusi.jpg"
     },
     {
         id: "di-atas-sajadah-cinta",
@@ -574,9 +574,9 @@ const BOOKS = [
         language: "Indonesia",
         category: "Spiritualitas",
         format: "PDF",
-        cover: null,
         pdf: "buku/di atas-sajadah-cinta.pdf",
-        description: "Kumpulan kisah teladan Islami yang menguatkan iman dan menenteramkan hati."
+        description: "Kumpulan kisah teladan Islami yang menguatkan iman dan menenteramkan hati.",
+        cover: "assets/images/covers/di atas-sajadah-cinta.jpg"
     }
 ];
 
