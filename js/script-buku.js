@@ -255,24 +255,7 @@ const BOOKS = [
         sourceLink: "https://www.goodreads.com/book/show/15733557-des-c-ision",
         description: "Desi memutuskan hubungan dengan De karena merasa hubungan mereka hambar. Setelah berpisah, ia justru dihantui rasa kehilangan, masalah persahabatan, urusan kuliah, dan perasaan yang belum selesai."
     },
-    {
-        id: "death-note-l-change-the-world",
-        title: "Death Note: L Change the World",
-        author: "M",
-        publisher: "VIZ Media",
-        year: 2009,
-        pages: "174 halaman",
-        language: "English",
-        category: "Novel",
-        format: "PDF",
-        theme: "Crime & Thriller",
-        isbn: "978-142-153-225-7",
-        cover: "assets/images/covers/Death Note   L Change the World.png",
-        pdf: "assets/pdfs/Novel/Death Note.pdf",
-        source: "VIZ Media / Simon & Schuster",
-        sourceLink: "https://www.simonandschuster.com/books/Death-Note-L-Change-the-WorLd/M/Death-Note-L-Change-the-WorLd-%28Novel%29/9781421532257",
-        description: "Dalam kontinuitas alternatif Death Note, L hanya memiliki waktu terbatas untuk menghentikan kelompok teroris yang membawa ancaman virus mematikan. Ia harus menggunakan kemampuan detektifnya untuk menyelamatkan dunia sambil menghadapi batas waktu yang semakin sempit."
-    },
+
     {
         id: "planet-manga-katalog-2005",
         title: "Planet Manga Januar/Juni 2005 Vorschau Mangakatalog",
