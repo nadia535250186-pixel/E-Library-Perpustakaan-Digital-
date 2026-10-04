@@ -430,7 +430,8 @@ function writeStoredIds(key, ids) {
 let favorites = [...new Set(readStoredIds(STORAGE_KEY))];
 
 function getBook(id) {
-    return BOOKS.find(book => book.id === id);
+    return BOOKS.find(book => book.id === id)
+        || (window.BOOKS_LILA || []).find(book => book.id === id);
 }
 
 function encodeAssetPath(path) {
@@ -744,8 +745,8 @@ function renderDetailPage() {
 function renderReaderPage() {
     const wrapper = document.getElementById("readerContent");
     if (!wrapper) return;
-
-    const availableBooks = BOOKS.filter(book => book.pdf);
+    const allBooks = [...BOOKS, ...(window.BOOKS_LILA || [])];
+    const availableBooks = allBooks.filter(book => book.pdf);
     const params = new URLSearchParams(window.location.search);
     const requestedId = params.get("id") || "pengantar-mikrobiologi";
     const book = getBook(requestedId);
