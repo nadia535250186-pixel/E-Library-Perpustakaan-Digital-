@@ -1,0 +1,212 @@
+const BOOKS_LILA = [
+    {
+        id: "laskar-pelangi",
+        title: "Laskar Pelangi",
+        author: "Andrea Hirata",
+        publisher: "Bentang Pustaka",
+        year: 2005,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/laskar-pelangi.pdf",
+        description: "Kisah sepuluh anak dari keluarga sederhana yang berjuang mendapatkan pendidikan di Belitong.",
+        cover: "assets/images/covers/laskar-pelangi.jpg"
+    },
+    {
+        id: "pada-senja-yang-membawamu-pergi",
+        title: "Pada Senja yang Membawamu Pergi",
+        author: "Boy Candra",
+        publisher: "Gagas Media",
+        year: 2016,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/pada-senja-yang-membawamu-pergi.pdf",
+        description: "Kisah tentang cinta, harapan, dan kenangan yang kembali hadir sebagai alasan untuk terus melangkah.",
+        cover: "assets/images/covers/pada-senja-yang-membawamu-pergi.jpg"
+    },
+    {
+        id: "negeri-lima-menara",
+        title: "Negeri 5 Menara",
+        author: "Ahmad Fuadi",
+        publisher: "Gramedia",
+        year: 2009,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/negeri-lima-menara.pdf",
+        description: "Perjalanan Alif Fikri dan sahabat-sahabatnya di Pondok Madani, ditemani semangat untuk meraih cita-cita.",
+        cover: "assets/images/covers/negeri-5-menara.jpg"
+    },
+    {
+        id: "matahari",
+        title: "Matahari",
+        author: "Tere Liye",
+        publisher: "Gramedia Pustaka Utama",
+        year: 2016,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/matahari.pdf",
+        description: "Petualangan Raib, Seli, dan Ali berlanjut saat mereka menghadapi tantangan baru di dunia paralel.",
+        cover: "assets/images/covers/matahari.jpg"
+    },
+    {
+        id: "tenggelamnya-kapal-van-der-wijck",
+        title: "Tenggelamnya Kapal Van der Wijck",
+        author: "Haji Abdul Malik Karim Amrullah",
+        publisher: "Gema Insani",
+        year: 1938,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/tenggelamnya-kapal-van-der-wijck.pdf",
+        description: "Kisah cinta yang terhalang adat dan perbedaan latar sosial di Minangkabau.",
+        cover: "assets/images/covers/tenggelamnya-kapal-van-der-wijck.jpg"
+    },
+    {
+        id: "bumi-cinta",
+        title: "Bumi Cinta",
+        author: "Habiburrahman El-Shirazy",
+        publisher: "Republika",
+        year: 2019,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/bumi-cinta.pdf",
+        description: "Perjalanan seorang mahasiswa Indonesia yang berusaha menjaga prinsip hidup selama menempuh studi di luar negeri.",
+        cover: "assets/images/covers/bumi-cinta.jpg"
+    },
+    {
+        id: "sengsara-membawa-nikmat",
+        title: "Sengsara Membawa Nikmat",
+        author: "Sutan Sati",
+        publisher: "Balai Pustaka",
+        year: 1929,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/sengsara-membawa-nikmat.pdf",
+        description: "Pengembaraan Midun dalam kisah klasik yang melintasi Sumatra hingga Jawa.",
+        cover: "assets/images/covers/sengsara-membawa-nikmat.jpg"
+    },
+    {
+        id: "the-seven-spirits-of-god",
+        title: "The Seven Spirits of God",
+        author: "Ron Auch",
+        publisher: "New Leaf Press",
+        year: 1993,
+        language: "English",
+        category: "Spiritualitas",
+        format: "PDF",
+        pdf: "buku/the-seven-spirits-of-god.pdf",
+        description: "Pembahasan mengenai tujuh roh Allah dalam ajaran Alkitab dan kaitannya dengan kehidupan rohani.",
+        cover: "assets/images/covers/the-seven-spirits-of-god.jpg"
+    },
+    {
+        id: "dunia-sophie-sebuah-novel-filsafat",
+        title: "Dunia Sophie: Sebuah Novel Filsafat",
+        author: "Jostein Gaarder",
+        publisher: "Mizan",
+        year: 2020,
+        language: "Indonesia",
+        category: "Filsafat",
+        format: "PDF",
+        pdf: "buku/dunia-sophie-sebuah-novel-filsafat.pdf",
+        description: "Sophie menerima pertanyaan-pertanyaan misterius yang mengantarnya mengenal sejarah dan pemikiran filsafat.",
+        cover: "assets/images/covers/dunia-sophie-sebuah-novel-filsafat.jpg"
+    },
+    {
+        id: "dalam-mihrab-cinta",
+        title: "Dalam Mihrab Cinta",
+        author: "Habiburrahman El Shirazy",
+        publisher: "Republika",
+        year: 2020,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/dalam-mihrab-cinta.pdf",
+        description: "Kisah tentang ketegaran, ketulusan, dan perjalanan cinta yang tumbuh di jalan Allah.",
+        cover: "assets/images/covers/dalam-mihrab-cinta.jpg"
+    },
+    {
+        id: "royan-revolusi",
+        title: "Royan Revolusi",
+        author: "Ramadhan K.H.",
+        publisher: "Gunung Agung",
+        year: 1970,
+        language: "Indonesia",
+        category: "Novel",
+        format: "PDF",
+        pdf: "buku/royan-revolusi.pdf",
+        description: "Idrus berusaha mempertahankan nuraninya ketika kembali ke desa yang dipenuhi manipulasi dan perebutan kepentingan.",
+        cover: "assets/images/covers/royan-revolusi.jpg"
+    },
+    {
+        id: "di-atas-sajadah-cinta",
+        title: "Di Atas Sajadah Cinta",
+        author: "Habiburrahman El Shirazy",
+        publisher: "Republika",
+        year: 2006,
+        language: "Indonesia",
+        category: "Spiritualitas",
+        format: "PDF",
+        pdf: "buku/di atas-sajadah-cinta.pdf",
+        description: "Kumpulan kisah teladan Islami yang menguatkan iman dan menenteramkan hati.",
+        cover: "assets/images/covers/di atas-sajadah-cinta.jpg"
+    }
+];
+
+const COLLECTIONS_LILA = {
+    popular: [
+        "laskar-pelangi",
+        "negeri-lima-menara",
+        "matahari",
+        "tenggelamnya-kapal-van-der-wijck"
+    ],
+
+    latest: [
+        "dunia-sophie-sebuah-novel-filsafat",
+        "dalam-mihrab-cinta",
+        "bumi-cinta",
+        "pada-senja-yang-membawamu-pergi"
+    ],
+
+    recommended: [
+        "sengsara-membawa-nikmat",
+        "royan-revolusi",
+        "di-atas-sajadah-cinta",
+        "the-seven-spirits-of-god"
+    ]
+};
+
+const page = document.body.dataset.collection;
+const collectionGrid = document.querySelector("#collectionGrid");
+
+let booksToShow = [];
+
+if (page === "popular") {
+    booksToShow = COLLECTIONS_LILA.popular
+        .map(id => BOOKS_LILA.find(book => book.id === id))
+        .filter(Boolean);
+
+} else if (page === "latest") {
+    booksToShow = COLLECTIONS_LILA.latest
+        .map(id => BOOKS_LILA.find(book => book.id === id))
+        .filter(Boolean);
+
+} else if (page === "recommended") {
+    booksToShow = COLLECTIONS_LILA.recommended
+        .map(id => BOOKS_LILA.find(book => book.id === id))
+        .filter(Boolean);
+}
+
+booksToShow.forEach(book => {
+    collectionGrid.innerHTML += `
+        <div class="book-card">
+            <img src="${book.cover}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+        </div>
+    `;
+});
