@@ -11,7 +11,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Mikrobiologi",
         cover: "assets/images/covers/Pengantar-Mikrobiologi-v.jpg",
-        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/740966742-24-01-39-eBook-Pengantar-Mikrobiologi-v.pdf",
+        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/Pengantar-Mikrobiologi.pdf",
         source: "Universitas Imelda Medan",
         description: "Buku pengantar yang membahas klasifikasi dan fisiologi mikroba, sterilisasi, teknik isolasi bakteri, pertumbuhan mikroba, teknik laboratorium dan mikroskopi, infeksi virus, imunologi, flora normal, kualitas air, serta daya antibakteri antiseptik."
     },
@@ -28,7 +28,7 @@ const BOOKS = [
         theme: "Biokimia",
         isbn: "978-0-07-144090-4",
         cover: "assets/images/covers/Biokimia-Harper-Ed-27.webp",
-        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/BD-Biokimia-Harper-Ed-27-pdf.pdf",
+        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/Biokimia-Harper.pdf",
         source: "McGraw-Hill",
         description: "Membahas struktur dan fungsi protein serta enzim, bioenergetika dan metabolisme karbohidrat maupun lipid, metabolisme protein dan asam amino, makromolekul pembawa informasi, komunikasi sel, serta berbagai topik khusus biokimia."
     },
@@ -45,7 +45,7 @@ const BOOKS = [
         theme: "Farmakologi Kedokteran Gigi",
         isbn: "978-3-031-53954-1",
         cover: "assets/images/covers/Arthur H. Jeske (editor) - Contemporary Dental Pharmacology_ Evidence-Based Considerations-Springer (2024).png",
-        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/Arthur H. Jeske (editor) - Contemporary Dental Pharmacology_ Evidence-Based Considerations-Springer (2024).pdf",
+        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/Company.pdf",
         source: "Springer Nature",
         sourceLink: "https://link.springer.com/book/10.1007/978-3-031-53954-1",
         doi: "10.1007/978-3-031-53954-1",
@@ -64,7 +64,7 @@ const BOOKS = [
         theme: "Psikologi Lintas Budaya",
         isbn: "978-602-958-476-9",
         cover: "assets/images/covers/Psikologi Lintas Budaya.png",
-        pdf: "assets/pdfs/Psikologi/Psikologi Lintas Budaya.pdf",
+        pdf: "assets/pdfs/Psikologi/Psikologi Lintas Budaya..pdf",
         source: "UIN-MALIKI Press",
         description: "Kumpulan kajian psikologi lintas budaya yang melihat perilaku manusia dalam konteks lokalitas, termasuk kesenian, tradisi masyarakat, permainan tradisional, identitas diri, adat, ritual, dan kehidupan komunitas di berbagai daerah Indonesia."
     },
@@ -80,7 +80,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Psikologi Pendidikan",
         cover: "assets/images/covers/Buku Psikologi Belajar.png",
-        pdf: "assets/pdfs/Psikologi/Buku Psikologi Belajar.pdf",
+        pdf: "assets/pdfs/Psikologi/Psikologi Belajar.pdf",
         source: "Koleksi e-Book Universitas Imelda Medan",
         description: "Membahas hakikat psikologi belajar, perilaku belajar, karakteristik belajar, berbagai teori belajar seperti behavioristik, kognitif, dan humanistik, motivasi belajar, kesulitan belajar, serta diagnosis dan teknik penanganannya."
     },
@@ -96,7 +96,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Seksualitas & Psikologi",
         cover: "assets/images/covers/Ternyata-aku-masih-perawan.png",
-        pdf: "assets/pdfs/Psikologi/Ternyata-aku-masih-perawan.pdf",
+        pdf: "assets/pdfs/Psikologi/aku-masih-perawan.pdf",
         source: "Koleksi e-Book",
         description: "Buku populer yang membahas pengetahuan tentang keperawanan dan seksualitas melalui topik seperti mitos dan tanda-tanda keperawanan, malam pertama, persiapan, serta efek dan pemahaman seksualitas."
     },
@@ -113,7 +113,7 @@ const BOOKS = [
         theme: "Psikologi Remaja & Narkoba",
         isbn: "978-979-3027-51-7",
         cover: "assets/images/covers/Psikologi-kaum-muda-pengguna-narkoba.png",
-        pdf: "assets/pdfs/Psikologi/Psikologi-kaum-muda-pengguna-narkoba.pdf",
+        pdf: "assets/pdfs/Psikologi/Psikologi-kaum-muda.pdf",
         source: "Salemba Humanika",
         description: "Membahas pengguna narkoba ilegal, tugas perkembangan pemuda, faktor sosial dan psikologis penggunaan narkoba, dampak penyalahgunaan, serta proses pemulihan dari ketergantungan."
     },
@@ -129,7 +129,7 @@ const BOOKS = [
         format: "Open Textbook PDF",
         theme: "Psikologi Perkembangan",
         cover: "assets/images/covers/Development A Psichological Perspective Second Edition.png",
-        pdf: "assets/pdfs/Psikologi/Lifespan Development A Psichological Perspective Second Edition.pdf",
+        pdf: "assets/pdfs/Psikologi/Lifespan Development A Psichological Edition.pdf",
         source: "Open Textbook Library / OER Universitas Airlangga",
         sourceLink: "https://oer.unair.ac.id/items/show/460",
         license: "CC BY-NC-SA 3.0",
@@ -147,7 +147,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Farmakologi Kedokteran Gigi",
         cover: "assets/images/covers/374559326-Farmakologi-bab-1-3.png",
-        pdf: "assets/pdfs/Farmasi/374559326-Farmakologi-bab-1-3.pdf",
+        pdf: "assets/pdfs/Bidang Ilmu Kedokteran/Farmakologi-bab-1-3.pdf",
         source: "Koleksi e-Book",
         description: "Buku ajar yang memperkenalkan konsep dasar farmakologi, penggolongan obat, serta penggunaan dan pemberian obat pada pasien dalam perawatan gigi."
     },
@@ -163,7 +163,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Pelayanan Kefarmasian HIV/AIDS",
         cover: "assets/images/covers/56. Pedoman-Pelayanan-Farmasi-Untuk-Odha.png",
-        pdf: "assets/pdfs/Farmasi/56. Pedoman-Pelayanan-Farmasi-Untuk-Odha.pdf",
+        pdf: "assets/pdfs/Farmasi/Pedoman-Pelayanan-Farmasi-Untuk-Odha.pdf",
         source: "Kementerian Kesehatan RI",
         sourceLink: "https://farmalkes.kemkes.go.id/unduh/pedoman-pelayanan-kefarmasian-untuk-orang-dengan-hiv-aids-odha/",
         description: "Pedoman pelayanan kefarmasian bagi orang dengan HIV/AIDS yang membahas peran tenaga farmasi, pengelolaan obat antiretroviral, penggunaan obat secara tepat, serta konseling untuk meningkatkan kepatuhan terapi."
@@ -181,7 +181,7 @@ const BOOKS = [
         theme: "Fitofarmaka & Kesehatan",
         isbn: "978-602-73737-6-1",
         cover: "assets/images/covers/33. REMPAH DAN HERBAL.png",
-        pdf: "assets/pdfs/Farmasi/33. REMPAH DAN HERBAL.pdf",
+        pdf: "assets/pdfs/Farmasi/REMPAH DAN HERBAL.pdf",
         source: "Selaras Media / Bintangpusnas Edu",
         sourceLink: "https://bintangpusnas.perpusnas.go.id/konten/BK53545/rempah-dan-herba-kebun-pekarangan-rumah-masyarakat",
         description: "Membahas keragaman rempah dan herba yang dapat dibudidayakan di kebun atau pekarangan, potensinya sebagai sumber fitofarmaka, serta kaitannya dengan kesehatan dan kebugaran masyarakat."
@@ -199,7 +199,7 @@ const BOOKS = [
         theme: "Kimia Organik",
         isbn: "978-623-5481-84-5",
         cover: "assets/images/covers/4. KIMIA ORGANIK.png",
-        pdf: "assets/pdfs/Farmasi/4. KIMIA ORGANIK.pdf",
+        pdf: "assets/pdfs/Farmasi/KIMIA ORGANIK.pdf",
         source: "CV. Patra Media Grafindo",
         sourceLink: "https://repo.unsrat.ac.id/5047/1/Buku%20Kimia%20Organik%20Fenny.pdf",
         description: "Buku pengantar kimia organik yang membahas tata nama, struktur, sifat, dan fungsi senyawa organik sebagai dasar untuk memahami berbagai materi kimia di bidang kesehatan."
@@ -216,7 +216,7 @@ const BOOKS = [
         format: "PDF",
         theme: "Penjaminan Mutu Pendidikan",
         cover: "assets/images/covers/Buku Pedoman SPMI 2018.png",
-        pdf: "assets/pdfs/Farmasi/Buku Pedoman SPMI 2018.pdf",
+        pdf: "assets/pdfs/Farmasi/Buku Pedoman SPMI.pdf",
         source: "RISTEKDIKTI",
         description: "Pedoman mengenai penerapan Sistem Penjaminan Mutu Internal, termasuk prinsip, mekanisme, siklus, pelaksanaan, evaluasi, pengendalian, dan peningkatan mutu internal pada perguruan tinggi."
     },
@@ -233,7 +233,7 @@ const BOOKS = [
         theme: "Fantasy",
         isbn: "978-602-6699-07-7",
         cover: "assets/images/covers/the-fate-of-the-tearling-erika-johansen.webp",
-        pdf: "assets/pdfs/Novel/The Fate Of The Tearling by Erika Johansen.pdf",
+        pdf: "assets/pdfs/Novel/The Fate Of The Tearling.pdf",
         source: "Perpustakaan Jakarta",
         description: "Kelsea berada dalam penjara dan Tearling masih terancam oleh Gereja Arvath serta iblis gelap yang bebas dari Pegunungan Fairwitch. Sambil melihat visi masa lalu, Kelsea berusaha memahami kesalahan yang telah terjadi dan mencari jalan untuk menyelamatkan Tearling."
     },
@@ -268,7 +268,7 @@ const BOOKS = [
         theme: "Crime & Thriller",
         isbn: "978-142-153-225-7",
         cover: "assets/images/covers/Death Note   L Change the World.png",
-        pdf: "assets/pdfs/Novel/Death Note - L Change the World [Scans].pdf",
+        pdf: "assets/pdfs/Novel/Death Note.pdf",
         source: "VIZ Media / Simon & Schuster",
         sourceLink: "https://www.simonandschuster.com/books/Death-Note-L-Change-the-WorLd/M/Death-Note-L-Change-the-WorLd-%28Novel%29/9781421532257",
         description: "Dalam kontinuitas alternatif Death Note, L hanya memiliki waktu terbatas untuk menghentikan kelompok teroris yang membawa ancaman virus mematikan. Ia harus menggunakan kemampuan detektifnya untuk menyelamatkan dunia sambil menghadapi batas waktu yang semakin sempit."
@@ -285,7 +285,7 @@ const BOOKS = [
         format: "Katalog Manga",
         theme: "Manga Catalog",
         cover: "assets/images/covers/mangakatalog2005_0000.jpg",
-        pdf: "assets/pdfs/Comic/mangakatalog2005.pdf",
+        pdf: "assets/pdfs/Comic/mangakatalog.pdf",
         source: "Internet Archive / Panini Comics",
         description: "Katalog pratinjau Planet Manga yang memuat daftar dan materi promosi manga yang diterbitkan atau dipasarkan pada periode Januari–Juni 2005."
     },
@@ -302,7 +302,7 @@ const BOOKS = [
         theme: "Fiksi Indonesia",
         isbn: "978-602-291-102-9",
         cover: "assets/images/covers/Ayah - Andrea Hirata.png",
-        pdf: "assets/pdfs/Novel/Ayah - Andrea Hirata.pdf",
+        pdf: "assets/pdfs/Novel/Ayah.pdf",
         source: "Bentang Pustaka",
         description: "Novel Andrea Hirata yang mengangkat tema keluarga, kasih sayang, perjuangan, dan sosok ayah dalam kehidupan. Ceritanya menyoroti hubungan antarmanusia dan nilai pengorbanan yang tumbuh dari kehidupan sehari-hari."
     },
@@ -319,7 +319,7 @@ const BOOKS = [
         theme: "Romance & Refleksi",
         isbn: "979-794-499-9",
         cover: "assets/images/covers/Boy Candra - Senja_ Hujan_ Cerita yang Telah Usai.png",
-        pdf: "assets/pdfs/Novel/Boy Candra - Senja_ Hujan_ Cerita yang Telah Usai .pdf",
+        pdf: "assets/pdfs/Novel/Boy Candra.pdf",
         source: "Media Kita / Grasindo",
         description: "Kumpulan tulisan reflektif tentang perasaan, kenangan, jatuh cinta, kehilangan, dan belajar merelakan. Senja dan hujan digunakan sebagai latar emosional untuk menggambarkan perjalanan hati setelah sebuah hubungan berakhir."
     },
@@ -336,7 +336,7 @@ const BOOKS = [
         theme: "Sastra Indonesia",
         isbn: "978-602-03-8305-7",
         cover: "assets/images/covers/Yang fana adalah waktu.png",
-        pdf: "assets/pdfs/Novel/Yang fana adalah waktu.pdf",
+        pdf: "assets/pdfs/Novel/yang fana adalah waktu.pdf",
         source: "Gramedia Pustaka Utama / Perpustakaan Jakarta",
         sourceLink: "https://perpustakaan.jakarta.go.id/book/detail?cn=INLIS000000000780073",
         description: "Novel ketiga dari Trilogi Hujan Bulan Juni yang mengikuti akhir perjalanan Pingkan dan Sarwono. Kisahnya kembali mempertanyakan hubungan cinta, waktu, dan takdir yang dapat mempertemukan sekaligus memisahkan manusia."
@@ -356,7 +356,7 @@ const BOOKS = [
         theme: "Cerita Rakyat - Jakarta Timur",
         isbn: "978-623-307-853-5",
         cover: "assets/images/covers/Astawana Penjaga Condet.png",
-        pdf: "assets/pdfs/Comic/Astawana Penjaga Condet.pdf",
+        pdf: "assets/pdfs/Comic/Astawana.pdf",
         source: "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
         sourceLink: "https://budi.kemendikdasmen.go.id/storage/content/jV1DDOJVtdIklMLzu5eUmsoL9iqQnMA1nSP0YpnF.pdf",
         description: "Komik cerita rakyat tentang Astawana, pangeran sekaligus menantu Pangeran Condet yang dikenal jujur dan pemberani. Cerita menggambarkan perjuangannya menghadapi kerja paksa dan perampasan tanah oleh penjajah."
@@ -374,7 +374,7 @@ const BOOKS = [
         theme: "Art / Techniques / Drawing",
         isbn: "978-0-89134-337-0",
         cover: "assets/images/covers/Keys_to_Drawing.png",
-        pdf: "assets/pdfs/Novel/Keys_to_Drawing.pdf",
+        pdf: "assets/pdfs/Novel/Keys_to_Drawing..pdf",
         source: "North Light Books / Penguin Random House",
         sourceLink: "https://www.penguinrandomhouse.com/books/627906/keys-to-drawing-by-bert-dodson/",
         description: "Panduan menggambar Bert Dodson yang menyusun 55 kunci latihan untuk melatih pengamatan, kontrol garis, cahaya, kedalaman, tekstur, dan permainan kreatif agar pembaca lebih percaya diri saat menggambar."
@@ -394,7 +394,7 @@ const BOOKS = [
         theme: "Crime & Mystery / Historical Fiction",
         isbn: "978-1-64609-070-9",
         cover: "assets/images/covers/The-Apothecary-Diaries.jpg",
-        pdf: "assets/pdfs/Comic/The Apothecary Diaries v01 (2020) (Digital) (Shizu).pdf",
+        pdf: "assets/pdfs/Comic/The Apothecary Diaries v01.pdf",
         source: "Square Enix Manga",
         sourceLink: "https://books.google.com/books/about/The_Apothecary_Diaries_01_Manga.html?id=7rGQEAAAQBAJ",
         description: "Maomao, gadis yang terlatih dalam pengobatan herbal, dipaksa bekerja sebagai pelayan di istana kekaisaran. Setelah membantu memecahkan misteri penyakit para pewaris takhta, ia dipromosikan dan terlibat dalam berbagai kasus serta intrik istana."
