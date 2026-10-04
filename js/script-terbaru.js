@@ -157,6 +157,7 @@ const BOOKS_LILA = [
     }
 ];
 
+
 const COLLECTIONS_LILA = {
     popular: [
         "laskar-pelangi",
@@ -180,26 +181,52 @@ const COLLECTIONS_LILA = {
     ]
 };
 
+
 const page = document.body.dataset.collection;
+
 const collectionGrid = document.querySelector("#collectionGrid");
+const collectionEyebrow = document.querySelector("#collectionEyebrow");
+const collectionTitle = document.querySelector("#collectionTitle");
+const collectionDescription = document.querySelector("#collectionDescription");
+const collectionCount = document.querySelector("#collectionCount");
 
 let booksToShow = [];
 
+
 if (page === "popular") {
+
+    collectionEyebrow.textContent = "BANYAK DICARI";
+    collectionTitle.textContent = "Buku Populer";
+    collectionDescription.textContent = "Pilihan buku populer dari koleksi Lila.";
+    collectionCount.textContent = "4 Buku";
+
     booksToShow = COLLECTIONS_LILA.popular
         .map(id => BOOKS_LILA.find(book => book.id === id))
         .filter(Boolean);
 
 } else if (page === "latest") {
+
+    collectionEyebrow.textContent = "KOLEKSI TERBARU";
+    collectionTitle.textContent = "Buku Terbaru";
+    collectionDescription.textContent = "Koleksi buku terbaru dari koleksi Lila.";
+    collectionCount.textContent = "4 Buku";
+
     booksToShow = COLLECTIONS_LILA.latest
         .map(id => BOOKS_LILA.find(book => book.id === id))
         .filter(Boolean);
 
 } else if (page === "recommended") {
+
+    collectionEyebrow.textContent = "PILIHAN EDITOR";
+    collectionTitle.textContent = "Buku Rekomendasi";
+    collectionDescription.textContent = "Pilihan buku yang direkomendasikan dari koleksi Lila.";
+    collectionCount.textContent = "4 Buku";
+
     booksToShow = COLLECTIONS_LILA.recommended
         .map(id => BOOKS_LILA.find(book => book.id === id))
         .filter(Boolean);
 }
+
 
 booksToShow.forEach(book => {
     collectionGrid.innerHTML += `
