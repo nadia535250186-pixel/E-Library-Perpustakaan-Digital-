@@ -197,7 +197,7 @@ if (page === "popular") {
 
     collectionEyebrow.textContent = "BANYAK DICARI";
     collectionTitle.textContent = "Buku Populer";
-    collectionDescription.textContent = "Pilihan buku populer dari koleksi Lila.";
+    collectionDescription.textContent = "Pilihan buku populer.";
     collectionCount.textContent = "4 Buku";
 
     booksToShow = COLLECTIONS_LILA.popular
@@ -208,7 +208,7 @@ if (page === "popular") {
 
     collectionEyebrow.textContent = "KOLEKSI TERBARU";
     collectionTitle.textContent = "Buku Terbaru";
-    collectionDescription.textContent = "Koleksi buku terbaru dari koleksi Lila.";
+    collectionDescription.textContent = "Koleksi buku terbaru.";
     collectionCount.textContent = "4 Buku";
 
     booksToShow = COLLECTIONS_LILA.latest
@@ -219,7 +219,7 @@ if (page === "popular") {
 
     collectionEyebrow.textContent = "PILIHAN EDITOR";
     collectionTitle.textContent = "Buku Rekomendasi";
-    collectionDescription.textContent = "Pilihan buku yang direkomendasikan dari koleksi Lila.";
+    collectionDescription.textContent = "Pilihan buku yang direkomendasikan.";
     collectionCount.textContent = "4 Buku";
 
     booksToShow = COLLECTIONS_LILA.recommended
