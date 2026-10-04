@@ -230,10 +230,35 @@ if (page === "popular") {
 
 booksToShow.forEach(book => {
     collectionGrid.innerHTML += `
-        <div class="book-card">
-            <img src="${book.cover}" alt="${book.title}">
-            <h3>${book.title}</h3>
-            <p>${book.author}</p>
-        </div>
+        <article class="book-card">
+            <a class="book-cover" href="detail-buku.html?id=${encodeURIComponent(book.id)}">
+                <img src="${book.cover}" alt="Cover ${book.title}" loading="lazy">
+            </a>
+
+            <div class="book-body">
+                <span class="book-category">${book.category}</span>
+
+                <h3 class="book-title">
+                    <a href="detail-buku.html?id=${encodeURIComponent(book.id)}">
+                        ${book.title}
+                    </a>
+                </h3>
+
+                <p class="book-author">${book.author}</p>
+
+                ${book.year ? `<p class="book-year">Terbit ${book.year}</p>` : ""}
+
+              <div class="card-actions">
+              <a class="button button-dark"
+              href="${book.pdf}">
+              Baca PDF
+              </a>
+
+                    <button class="button button-accent" type="button">
+                        ♡ Simpan
+                    </button>
+                </div>
+            </div>
+        </article>
     `;
 });
